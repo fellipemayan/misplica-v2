@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { activeXRay } from '@/composables/UseXRay';
+import { activeXRay } from '@/composables/useXRay';
 import type { XRayType } from '@/types/types';
 import SignComponent from '../SignComponent/SignComponent.vue';
 
@@ -45,18 +45,19 @@ const toggleXRay = (type: XRayType) => {
 
 <style scoped>
 .xray {
+  --base-radius: 1rem;
   display: flex !important;
   align-items: center;
   padding: 0.5rem;
   padding-left: 1rem;
   gap: 0.5rem;
-  position: absolute !important;
+  /* position: fixed !important;
   bottom: 1rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
   background-color: var(--clr-bg);
   border: 1px solid var(--clr-border);
-  border-radius: 1rem;
+  border-radius: var(--base-radius);
 
   h2 {
     font-size: 1rem;

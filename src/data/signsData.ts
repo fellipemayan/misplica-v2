@@ -33,10 +33,16 @@ export const signsData: Record<string, SignData> = {
     }
   },
   // Exemplo 1: Signo Simples (Apenas Estático)
-  'icon-colecao': {
+  'titulo': {
     static: {
-      title: 'Ícone de Coleção (Pasta)',
-      description: 'Representação visual estática. Comunica a metáfora de um recipiente físico onde os documentos estão guardados.'
+      title: 'Título Principal',
+      description: 'Títulos fornecem informações fixas e podem ser interpretados sem interação.'
+    }
+  },
+  'subtitulo': {
+    metalinguistic: {
+      title: 'Subtítulo',
+      description: 'O subtítulo explica o propósito do MISplica, que é fornecer um guia sobre o Método de Inspeção Semiótica..'
     }
   },
 

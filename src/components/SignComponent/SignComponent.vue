@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { activeXRay } from '@/composables/UseXRay';
+import { activeXRay } from '@/composables/useXRay';
 import { signsData } from '@/data/signsData.ts';
 import { computed } from 'vue';
 
@@ -92,8 +92,8 @@ const translatedType = computed(() => {
   anchor-name: var(--anchor-name);
 
   inset: -0.25rem;
-  border: 0px dashed var(--pill-color, currentColor);
-  border-radius: 0.5rem;
+  border: 0px dashed var(--sign-color, currentColor);
+  border-radius: calc(var(--base-radius) + 0.25rem);
   pointer-events: none;
   z-index: 10;
   opacity: 0;
@@ -106,14 +106,14 @@ const translatedType = computed(() => {
 
 .sign-wrapper.is-active::before {
   inset: -0.5rem;
-  background: oklch(from var(--pill-color) l c h / 0.1);
+  background: oklch(from var(--sign-color) l c h / 0.1);
   opacity: 1;
-  border: 2px dashed var(--pill-color, currentColor);
+  border: 2px dashed var(--sign-color, currentColor);
 }
 
-.sign-wrapper.xray-static { --pill-color: var(--clr-static); }
-.sign-wrapper.xray-dynamic { --pill-color: var(--clr-dynamic); }
-.sign-wrapper.xray-metalinguistic { --pill-color: var(--clr-metalinguistic); }
+.sign-wrapper.xray-static { --sign-color: var(--clr-static); }
+.sign-wrapper.xray-dynamic { --sign-color: var(--clr-dynamic); }
+.sign-wrapper.xray-metalinguistic { --sign-color: var(--clr-metalinguistic); }
 
 .sign-indicator {
   position: absolute;
@@ -122,14 +122,17 @@ const translatedType = computed(() => {
 
   width: 32px;
   height: 32px;
-  inset: -1px;
   border-radius: 0.5rem;
   border: none;
-  background-color: var(--pill-color);
+  background-color: var(--sign-color);
   color: var(--clr-bg);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Remover quando adicionar os ícones */
+  font-size: 1rem;
+  font-weight: bold;
 
   anchor-name: var(--btn-anchor);
 
@@ -148,7 +151,6 @@ const translatedType = computed(() => {
 
 .sign-popover {
   margin-block: 0.25rem;
-  /* margin-inline: 1.5rem; */
   border: 1px solid var(--clr-border);
   background-color: var(--clr-bg);
   padding: 1rem;
@@ -194,17 +196,21 @@ header {
   margin-bottom: 0.75rem;
 }
 
-h4 { margin: 0; font-size: 0.95rem; }
+h4 {
+  font-size: 1rem;
+}
 
 .sign-badge {
   font-size: 0.75rem;
   text-transform: uppercase;
-  background-color: var(--pill-color);
-  color: var(--clr-bg, #fff);
+  background-color: oklch(from var(--sign-color) l c h / 0.3);
   padding: 0.1rem 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   font-weight: 600;
 }
 
-p { margin: 0; font-size: 0.85rem; line-height: 1.4; text-wrap: pretty; }
+p {
+  font-size: 0.85rem;
+  text-wrap: pretty;
+}
 </style>
