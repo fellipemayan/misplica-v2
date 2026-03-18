@@ -1,0 +1,210 @@
+<script setup lang="ts">
+import { activeXRay } from '@/composables/UseXRay';
+import { signsData } from '@/data/signsData.ts';
+import { computed } from 'vue';
+
+const props = defineProps({
+  id: {
+    type: String,
+    required: true
+  },
+  tag: {
+    type: String,
+    default: 'div',
+  }
+})
+
+const sign = computed(() => signsData[props.id])
+
+const activeVision = computed(() => {
+  if (!activeXRay.value || !sign.value) return null;
+  return sign.value[activeXRay.value];
+})
+
+const isActive = computed(() => !!activeVision.value)
+
+const typeTranslations: Record<string, string> = {
+  static: 'estático',
+  dynamic: 'dinâmico',
+  metalinguistic: 'metalinguístico'
+}
+
+const translatedType = computed(() => {
+  return activeXRay.value ? typeTranslations[activeXRay.value] : '';
+})
+
+</script>
+
+<template>
+  <component
+    :is="tag"
+    class="sign-wrapper"
+    :class="[
+      isActive ? 'is-active' : '',
+      activeXRay ? `xray-${activeXRay}` : ''
+    ]"
+    :style="{
+      '--anchor-name': `--sign-${id}`,
+      '--btn-anchor': `--btn-${id}`
+    }"
+    :aria-describedby="isActive ? `popover-${id}` : undefined"
+  >
+    <slot />
+
+    <button
+      v-if="isActive && activeVision"
+      class="sign-indicator"
+      :class="`sign-pill-${activeXRay}`"
+      :popovertarget="`popover-${id}`"
+      aria-label="Ver análise semiótica"
+    >
+      +
+    </button>
+
+    <div
+      v-if="isActive && activeVision"
+      :id="`popover-${id}`"
+      class="sign-popover"
+      popover="auto"
+    >
+      <header>
+        <h4>{{ activeVision.title }}</h4>
+        <span class="sign-badge" :class="`sign-pill-${activeXRay}`">
+          {{ translatedType }}
+        </span>
+      </header>
+      <p>{{ activeVision.description }}</p>
+    </div>
+  </component>
+</template>
+
+
+<style scoped>
+.sign-wrapper {
+  display: inherit;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.sign-wrapper::before {
+  content: "";
+  position: absolute;
+  anchor-name: var(--anchor-name);
+
+  inset: -0.25rem;
+  border: 0px dashed var(--pill-color, currentColor);
+  border-radius: 0.5rem;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+
+  transition:
+    inset 0.2s var(--ease-squish),
+    opacity 0.2s ease-out,
+    border-width 0.2s ease-out;
+}
+
+.sign-wrapper.is-active::before {
+  inset: -0.5rem;
+  background: oklch(from var(--pill-color) l c h / 0.1);
+  opacity: 1;
+  border: 2px dashed var(--pill-color, currentColor);
+}
+
+.sign-wrapper.xray-static { --pill-color: var(--clr-static); }
+.sign-wrapper.xray-dynamic { --pill-color: var(--clr-dynamic); }
+.sign-wrapper.xray-metalinguistic { --pill-color: var(--clr-metalinguistic); }
+
+.sign-indicator {
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+
+  width: 32px;
+  height: 32px;
+  inset: -1px;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--pill-color);
+  color: var(--clr-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  anchor-name: var(--btn-anchor);
+
+  position-anchor: var(--anchor-name);
+  position-area: top right;
+
+  opacity: 0;
+  scale: 0.8;
+  transition: opacity 0.3s ease-out, scale 0.3s var(--ease-squish);
+}
+
+.sign-wrapper.is-active .sign-indicator {
+  opacity: 1;
+  scale: 1;
+}
+
+.sign-popover {
+  margin-block: 0.25rem;
+  /* margin-inline: 1.5rem; */
+  border: 1px solid var(--clr-border);
+  background-color: var(--clr-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 288px;
+
+  position-anchor: var(--btn-anchor);
+  position-area: bottom span-left;
+
+  position-try-fallbacks:
+    bottom span-right,
+    top span-left,
+    top span-right;
+
+  opacity: 0;
+  scale: 0.95;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.2s ease-out,
+    scale 0.2s var(--ease-squish),
+    transform 0.2s ease-out;
+}
+
+.sign-popover:popover-open {
+  opacity: 1;
+  scale: 1;
+  transform: translateY(0px);
+}
+
+@starting-style {
+  .sign-popover:popover-open {
+    opacity: 0;
+    scale: 0.95;
+    transform: translateY(10px);
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 { margin: 0; font-size: 0.95rem; }
+
+.sign-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: var(--pill-color);
+  color: var(--clr-bg, #fff);
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+p { margin: 0; font-size: 0.85rem; line-height: 1.4; text-wrap: pretty; }
+</style>

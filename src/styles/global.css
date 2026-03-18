@@ -1,0 +1,164 @@
+:root {
+  --max-content-width: 120ch;
+  --max-main-width: 60ch;
+  --grid-gutter: 2rem;
+  --grid-gap: 1rem;
+
+  color-scheme: light dark;
+
+  --clr-bg: light-dark(
+    oklch(0.9851 0 0), oklch(0.14 0 0));
+  --clr-bg-alt: light-dark(
+    oklch(0.97 0 0), oklch(0.2 0 0));
+  --clr-bg-alt-hover: light-dark(
+    oklch(0.95 0 0), oklch(0.25 0 0));
+
+  --clr-primary: light-dark(
+    oklch(0.67 0.2 250), oklch(0.8 0.2 250));
+  --clr-static: light-dark(
+    oklch(0.5 0.07 175), oklch(0.8 0.08 175));
+  --clr-dynamic: light-dark(
+    oklch(0.61 0.11 83), oklch(0.8 0.1 83));
+  --clr-metalinguistic: light-dark(
+    oklch(0.57 0.13 350), oklch(0.8 0.1 350));
+
+  --clr-text: light-dark(
+    oklch(0.1 0 0)), oklch(0.9851 0 0);
+  --clr-text-btn: light-dark(
+  oklch(0.9851 0 0), oklch(0.14 0 0));
+
+
+  --clr-border: light-dark(
+    oklch(0 0 250 / 0.3), oklch(1 0 250 / 0.3));
+
+  accent-color: var(--clr-primary);
+
+  --ease-squish: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Inter', sans-serif;
+
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  grid-template-columns:
+    [full-start] minmax(var(--grid-gutter), 1fr)
+    [content-start] minmax(0, calc((var(--max-content-width) - var(--max-main-width)) / 2))
+    [main-start] minmax(var(--max-main-width), 1fr) [main-end]
+    minmax(0, calc((var(--max-content-width) - var(--max-main-width)) / 2)) [content-end]
+    minmax(var(--grid-gutter), 1fr) [full-end];
+}
+.sidebar {
+  grid-column: content-start / main-start;
+  grid-row: 2;
+}
+.main {
+  grid-column: main-start / main-end;
+  grid-row: 2;
+}
+.controls {
+  grid-column: main-end / content-end;
+  grid-row: 2;
+}
+.footer {
+  grid-column: full-start / full-end;
+  grid-row: 3;
+}
+
+
+.btn {
+  --background: transparent;
+  --border: transparent;
+  --color: var(--clr-text);
+
+  height: 44px;
+  padding: 0 1.5rem;
+  line-height: 1;
+
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--color);
+
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary {
+  --background: var(--clr-bg-alt);
+  --border: var(--clr-border);
+
+  &:hover {
+    --background: var(--clr-bg-alt-hover);
+  }
+}
+
+.sign-btn {
+  --background: var(--clr-primary);
+
+  height: 44px;
+  padding: 0 1.5rem;
+  line-height: 1;
+
+  background-color: var(--background);
+  color: var(--clr-bg);
+  border: none;
+  border-radius: 2.5rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  &.static {
+    --background: var(--clr-static);
+  }
+  &.dynamic {
+    --background: var(--clr-dynamic);
+  }
+  &.metalinguistic {
+    --background: var(--clr-metalinguistic);
+  }
+
+  &:hover {
+    background-color: light-dark(
+      oklch(from var(--background) calc(l - 0.15) c h),
+      oklch(from var(--background) calc(l + 0.1) c h)
+    );
+  }
+}
