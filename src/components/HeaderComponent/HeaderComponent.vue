@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import SignComponent from '../SignComponent/SignComponent.vue';
-
 </script>
 
 <template>
@@ -15,16 +14,17 @@ import SignComponent from '../SignComponent/SignComponent.vue';
               tag="button"
               class="btn btn-icon btn-secondary"
             >
-              Sobre
-            </SignComponent>            
+              <span class="material-symbols-outlined">help</span>
+            </SignComponent>
           </li>
           <li class="show-on-mobile">
             <SignComponent
               id="botao-controles"
               tag="button"
               class="btn btn-icon btn-secondary"
+              popovertarget="drawer-controls"
             >
-              Controles
+              <span class="material-symbols-outlined">settings</span>
             </SignComponent>
           </li>
           <li class="show-on-mobile">
@@ -32,8 +32,9 @@ import SignComponent from '../SignComponent/SignComponent.vue';
               id="botao-sumario"
               tag="button"
               class="btn btn-icon btn-secondary"
+              popovertarget="drawer-sidebar"
             >
-              Sumário
+              <span class="material-symbols-outlined">menu</span>
             </SignComponent>
           </li>
         </ul>
@@ -64,20 +65,18 @@ import SignComponent from '../SignComponent/SignComponent.vue';
 .header-wrapper {
   grid-column: content-start / content-end;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 
 h1 {
   font-size: 1.5rem;
+  margin-right: auto;
 }
 
 ul {
   display: flex;
   gap: 0.5rem;
-}
-
-ul {
   list-style: none;
 }
 </style>

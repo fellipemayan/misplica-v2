@@ -29,8 +29,18 @@ const typeTranslations: Record<string, string> = {
   metalinguistic: 'metalinguístico'
 }
 
+const iconTranslations: Record<string, string> = {
+  static: 'widgets',
+  dynamic: 'magic_button',
+  metalinguistic: 'info'
+}
+
 const translatedType = computed(() => {
   return activeXRay.value ? typeTranslations[activeXRay.value] : '';
+})
+
+const activeIcon = computed(() => {
+  return activeXRay.value ? iconTranslations[activeXRay.value] : '';
 })
 
 </script>
@@ -58,7 +68,7 @@ const translatedType = computed(() => {
       :popovertarget="`popover-${id}`"
       aria-label="Ver análise semiótica"
     >
-      +
+      <span class="material-symbols-outlined">{{ activeIcon }}</span>
     </button>
 
     <div
@@ -132,6 +142,7 @@ const translatedType = computed(() => {
 
   /* Remover quando adicionar os ícones */
   font-size: 1rem;
+  font-style: normal;
   font-weight: bold;
 
   anchor-name: var(--btn-anchor);
@@ -142,6 +153,15 @@ const translatedType = computed(() => {
   opacity: 0;
   scale: 0.8;
   transition: opacity 0.3s ease-out, scale 0.3s var(--ease-squish);
+
+  span {
+    font-size: 1.25rem;
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
 }
 
 .sign-wrapper.is-active .sign-indicator {
@@ -155,6 +175,7 @@ const translatedType = computed(() => {
   background-color: var(--clr-bg);
   padding: 1rem;
   border-radius: 0.5rem;
+  font-style: normal;
   width: 288px;
 
   position-anchor: var(--btn-anchor);
@@ -197,20 +218,23 @@ header {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem
 }
 
 .sign-badge {
   font-size: 0.75rem;
   text-transform: uppercase;
   background-color: oklch(from var(--sign-color) l c h / 0.3);
-  padding: 0.1rem 0.5rem;
+  padding: 0.25rem 0.5rem 0.2rem 0.5rem;
+  line-height: 1;
   border-radius: 0.25rem;
   font-weight: 600;
 }
-
-p {
-  font-size: 0.85rem;
-  text-wrap: pretty;
+.sign-popover p {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-align: left;
+  text-wrap: balance;
 }
 </style>

@@ -22,8 +22,20 @@ import SignComponent from '../SignComponent/SignComponent.vue';
       <blockquote>
         "Esse é o meu entendimento de quem você é, o que eu aprendi que você quer ou precisa fazer, de que formas preferidas e por quê. Este é, portanto, o sistema que eu criei para você, e essa é a forma que você pode ou deve usá-lo para atingir uma série de objetivos dentro desta visão."
       </blockquote>
+      <hr>
     </section>
 
+    <section id="linguagem-das-interfaces">
+      <span class="section-title">Linguagem das Interfaces</span>
+      <h2>Decifrando os signos semióticos</h2>
+      <p>No coração da inspeção semiótica está o conceito de signo. Um signo é qualquer coisa que representa algo ou outra coisa em algum aspecto ou capacidade. A mensagem dos designers para os usuários é expressa por meio de signos que pertencem a um ou mais "sistemas de significação", como palavras, imagens, widgets, cores, estruturas de diálogo e layouts gráficos.</p>
+      <p>
+        "Esse é o meu entendimento de quem você é, o que eu aprendi que você quer ou precisa fazer, de que formas preferidas e por quê. Este é, portanto, o sistema que eu criei para você, e essa é a forma que você pode ou deve usá-lo para atingir uma série de objetivos dentro desta visão."
+      </p>
+      <p>
+        A Engenharia Semiótica classifica os signos em interfaces de sistemas interativos em três tipos principais: 
+      </p>
+    </section>
   </main>
 </template>
 
@@ -57,8 +69,13 @@ p {
   font-size: 1rem;
   line-height: 1.75;
   margin-block: 0 1rem;
+  text-wrap: pretty;
 }
-
+hr {
+  border: none;
+  border-top: 1px solid var(--clr-border);
+  margin-block: 3rem;
+}
 section {
   margin-top: 3rem;
 

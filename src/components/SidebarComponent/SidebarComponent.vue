@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
+import SignComponent from '../SignComponent/SignComponent.vue';
 
 interface tocItem {
   id: string,
@@ -59,36 +60,30 @@ const scrollToSection = (id: string) => {
 </script>
 
 <template>
-  <aside class="sidebar">
     <h2>Nesta página</h2>
-    <nav>
-      <ul class="toc-list">
-        <li
-        v-for="item in toc"
-          :key="item.id"
-          class="toc-item"
-          :class="{ 'is-active': activeId === item.id }"
-          @click="scrollToSection(item.id)"
-        >
-          {{ item.title }}
-        </li>
-      </ul>
-    </nav>
-  </aside>
+    <SignComponent id="signo-sumario" tag="div">
+      <nav>
+        <ul class="toc-list">
+          <li
+          v-for="item in toc"
+            :key="item.id"
+            class="toc-item"
+            :class="{ 'is-active': activeId === item.id }"
+            @click="scrollToSection(item.id)"
+          >
+            {{ item.title }}
+          </li>
+        </ul>
+      </nav>
+    </SignComponent>
 </template>
 
 <style scoped>
-.sidebar {
-  position: sticky;
-  top: calc(var(--header-height) + var(--sticky-offset));
-  align-self: start;
-}
 
 h2 {
   font-size: 1.25rem;
   color: var(--clr-text-alt);
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
 }
 
 .toc-list {
@@ -109,7 +104,7 @@ h2 {
   top: anchor(top);
   bottom: anchor(bottom);
 
-  left: -2px;
+  left: calc(anchor(left) - 1rem);
 
   transition: top 0.3s ease-out, bottom 0.3s ease-out;
   }
@@ -119,6 +114,7 @@ h2 {
   color: var(--clr-text-muted);
   cursor: pointer;
   transition: color 0.2s ease;
+  padding-block: 0.25rem;
 
   &:hover {
     color: var(--clr-text);
@@ -130,7 +126,4 @@ h2 {
     anchor-name: --active-toc-item;
   }
 }
-
-
-
 </style>

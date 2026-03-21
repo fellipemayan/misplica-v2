@@ -26,6 +26,52 @@ export const signsData: Record<string, SignData> = {
       description: 'Fala sobre o funcionamento do site.'
     }
   },
+  'sign-painel-controles': {
+    dynamic: {
+      title: 'Controles',
+      description: 'Abre o painel de controle, onde o usuário pode ajustar as configurações do sistema e acessar funcionalidades adicionais.'
+    }
+  },
+  'sign-painel-sumario': {
+    dynamic: {
+      title: 'Sidebar',
+      description: 'Abre a barra lateral, que pode conter informações adicionais, navegação ou ferramentas relacionadas ao conteúdo principal.'
+    }
+  },
+
+  'signo-sumario': {
+    dynamic: {
+      title: 'Sumário',
+      description: 'Permite ao usuário acessar um sumário ou índice do conteúdo, facilitando a navegação e a localização de seções específicas.'
+    }
+  },
+
+  'signo-tema': {
+    dynamic: {
+      title: 'Tema',
+      description: 'Permite ao usuário selecionar o tema visual do sistema.'
+    }
+  },
+  'signo-contraste': {
+    dynamic: {
+      title: 'Contraste',
+      description: 'Permite ao usuário ajustar o contraste do sistema para melhorar a legibilidade.'
+    }
+  },
+  'signo-fonte': {
+    dynamic: {
+      title: 'Tamanho da Fonte',
+      description: 'Permite ao usuário escolher o tamanho da fonte para melhor leitura.'
+    }
+  },
+  'signo-animacoes': {
+    dynamic: {
+      title: 'Animações Visuais',
+      description: 'Permite ao usuário ativar ou desativar animações visuais no sistema.'
+    }
+  },
+
+
   'xray': {
     dynamic: {
       title: 'Raio-X',

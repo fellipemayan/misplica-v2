@@ -22,7 +22,7 @@ const toggleXRay = (type: XRayType) => {
       @click="toggleXRay('static')"
       title="Raio-X estático"
     >
-      Estático
+    <span class="material-symbols-outlined">widgets</span>
     </button>
     <button
       class="xray-btn dynamic"
@@ -30,7 +30,7 @@ const toggleXRay = (type: XRayType) => {
       @click="toggleXRay('dynamic')"
       title="Raio-X dinâmico"
     >
-      Dinâmico
+    <span class="material-symbols-outlined">magic_button</span>
     </button>
     <button
       class="xray-btn metalinguistic"
@@ -38,7 +38,7 @@ const toggleXRay = (type: XRayType) => {
       @click="toggleXRay('metalinguistic')"
       title="Raio-X metalinguístico"
     >
-      Metalinguístico
+    <span class="material-symbols-outlined">info</span>
     </button>
   </SignComponent>
 </template>
@@ -51,13 +51,10 @@ const toggleXRay = (type: XRayType) => {
   padding: 0.5rem;
   padding-left: 1rem;
   gap: 0.5rem;
-  /* position: fixed !important;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%); */
   background-color: var(--clr-bg);
   border: 1px solid var(--clr-border);
   border-radius: var(--base-radius);
+  line-height: 1;
 
   h2 {
     font-size: 1rem;
@@ -102,6 +99,15 @@ const toggleXRay = (type: XRayType) => {
       oklch(from var(--background) calc(l - 0.15) c h),
       oklch(from var(--background) calc(l + 0.1) c h)
     );
+  }
+
+  &.active > span,
+  &:hover > span {
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
   }
 }
 </style>
