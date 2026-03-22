@@ -67,7 +67,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
         </li>
       </ul>
 
-      <h3>Signos Estáticos</h3>
+      <h3 id="linguagem-signos-estaticos">Signos Estáticos</h3>
       <p>Signos imóveis e persistentes no design da interface. Seu significado pode ser interpretado independentemente da interação do usuário, expressando o estado do sistema em um dado momento.</p>
 
       <h4>Onde identificar</h4>
@@ -101,7 +101,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
       <h4>Exemplos</h4>
       <CalloutComponent message="Os elementos abaixo são, de forma geral, exemplos de signos estáticos." />
 
-      <h3>Signos Dinâmicos</h3>
+      <h3 id="linguagem-signos-dinamicos">Signos Dinâmicos</h3>
       <p>Signos percebidos apenas por meio da interação, expressando o comportamento do sistema e as mudanças temporais em resposta às ações do usuário. Eles demonstram como o sistema reage.</p>
 
       <h4>Onde identificar</h4>
@@ -114,7 +114,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
       <h4>Exemplos</h4>
       <CalloutComponent message="Os elementos abaixo são, de forma geral, exemplos de signos dinâmicos." />
 
-      <h3>Signos Metalinguísticos</h3>
+      <h3 id="linguagem-signos-metalinguisticos">Signos Metalinguísticos</h3>
       <p>Signos que se referem a outros signos e os explicam, fornecendo informações explícitas sobre como outros signos podem ser utilizados durante a interação. Eles representam a "voz" direta do designer, instruindo o usuário sobre como usar o sistema.</p>
 
       <h4>Onde identificar</h4>
@@ -162,7 +162,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
 
       <!-- TODO: Imagem de diagrama -->
 
-      <h3>Aplicando o método</h3>
+      <h3 id="execucao-aplicando-o-metodo">Aplicando o método</h3>
       <p>O MIS é também um valioso instrumento didático para o ensino de IHC. O MIS é conduzido em quatro etapas distintas:</p>
 
       <ul class="card-list execution">
@@ -196,7 +196,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
         </li>
       </ul>
 
-      <h3>Preparação</h3>
+      <h3 id="execucao-preparacao">Preparação</h3>
       <p>Esta fase inicial é crucial para definir o escopo e o foco da avaliação, garantindo que a inspeção seja direcionada e eficiente. É o momento de estabelecer a base para a compreensão da metacomunicação do designer.</p>
 
       <h4>O que deve ser feito</h4>
@@ -228,7 +228,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
         </li>
       </ul>
 
-      <h3>Coleta de Dados</h3>
+      <h3 id="execucao-coleta-de-dados">Coleta de Dados</h3>
       <p>Nesta fase, o avaliador mergulha na interface para identificar e interpretar os signos que compõem a metamensagem do designer. Esta etapa envolve uma análise sistemática de diferentes categorias de signos, cada uma revelando uma faceta da comunicação do sistema.</p>
 
       <h4>O que deve ser feito</h4>
@@ -261,7 +261,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
         A análise sequencial de signos metalinguísticos e estáticos revela que a metacomunicação do designer é uma mensagem multi-camada. Os signos metalinguísticos fornecem a "narrativa" explícita do designer, os signos estáticos oferecem as "pistas visuais" imediatas. Essa abordagem permite um diagnóstico preciso da origem da falha comunicativa, identificando se o problema está na explicação ou na representação visual.
       </p>
 
-      <h3>Consolidação e Interpretação dos Resultados</h3>
+      <h3 id="execucao-consolidacao">Consolidação e Interpretação dos Resultados</h3>
       <p>
         Esta fase é o coração analítico do MIS, onde as metamensagens parciais são sintetizadas, e os problemas de comunicabilidade são identificados e julgados. É aqui que o avaliador constrói uma compreensão integrada da metacomunicação do designer.
       </p>
@@ -296,7 +296,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
         A fase de consolidação e interpretação é onde o MIS transcende a mera identificação de problemas de usabilidade, tornando-se um método de diagnóstico semiótico profundo. Ao contrastar as metamensagens de diferentes tipos de signos, o avaliador não apenas descobre que há um problema, mas diagnostica a raiz semiológica da falha. Ele pode identificar se a intenção do designer está clara na documentação, mas se perde na representação visual (signos estáticos), ou se ambos são claros, mas o comportamento do sistema (signos dinâmicos) os contradiz. Essa síntese diagnóstica permite que as recomendações de melhoria sejam muito mais precisas e focadas na reparação da comunicação do design.
       </p>
 
-      <h3>Relato dos Resultados</h3>
+      <h3 id="execucao-relato">Relato dos Resultados</h3>
       <p>
         A fase final do MIS consiste em documentar os achados da avaliação de forma clara e acionável, comunicando os problemas de comunicabilidade identificados. O relatório é o produto final da inspeção, traduzindo as análises complexas em informações úteis para o processo de design.
       </p>

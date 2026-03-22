@@ -11,6 +11,8 @@
 
   --clr-bg: light-dark(
     oklch(0.99 0 0), oklch(0.14 0 0));
+  --clr-bg-hover: light-dark(
+    oklch(0.97 0 0), oklch(0.25 0 0));
   --clr-bg-alt: light-dark(
     oklch(0.97 0 0), oklch(0.2 0 0));
   --clr-bg-alt-hover: light-dark(
@@ -34,6 +36,8 @@
 
   --clr-border: light-dark(
     oklch(0 0 250 / 0.3), oklch(1 0 250 / 0.3));
+  --clr-border-muted: light-dark(
+    oklch(0 0 250 / 0.1), oklch(1 0 250 / 0.1));
 
   accent-color: var(--clr-primary);
 
