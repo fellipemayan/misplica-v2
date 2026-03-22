@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import CalloutComponent from '../CalloutComponent/CalloutComponent.vue';
+import ExampleSignList from '../ExampleSign/ExampleSignList.vue';
 import SignComponent from '../SignComponent/SignComponent.vue';
+
+const HEADER_OFFSET = 88;
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - HEADER_OFFSET - 20;
+
+  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+};
 </script>
 
 <template>
@@ -43,7 +56,9 @@ import SignComponent from '../SignComponent/SignComponent.vue';
           <span class="material-symbols-outlined">widgets</span>
           <h3>Estáticos</h3>
           <p>As Instruções Explícitas do Designer</p>
-          <button class="btn sign-btn" >
+          <button
+            class="btn sign-btn"
+            @click="scrollToSection('linguagem-signos-estaticos')">
             Ver exemplos
           </button>
         </li>
@@ -52,7 +67,9 @@ import SignComponent from '../SignComponent/SignComponent.vue';
           <span class="material-symbols-outlined">magic_button</span>
           <h3>Dinâmicos</h3>
           <p>As Instruções Explícitas do Designer</p>
-          <button class="btn sign-btn" >
+          <button
+            class="btn sign-btn"
+            @click="scrollToSection('linguagem-signos-dinamicos')" >
             Ver exemplos
           </button>
         </li>
@@ -61,7 +78,9 @@ import SignComponent from '../SignComponent/SignComponent.vue';
           <span class="material-symbols-outlined">info</span>
           <h3>Metalinguísticos</h3>
           <p>As Instruções Explícitas do Designer</p>
-          <button class="btn sign-btn" >
+          <button
+            class="btn sign-btn"
+            @click="scrollToSection('linguagem-signos-metalinguisticos')">
             Ver exemplos
           </button>
         </li>
@@ -100,6 +119,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
 
       <h4>Exemplos</h4>
       <CalloutComponent message="Os elementos abaixo são, de forma geral, exemplos de signos estáticos." />
+      <ExampleSignList type="static" />
 
       <h3 id="linguagem-signos-dinamicos">Signos Dinâmicos</h3>
       <p>Signos percebidos apenas por meio da interação, expressando o comportamento do sistema e as mudanças temporais em resposta às ações do usuário. Eles demonstram como o sistema reage.</p>
@@ -171,28 +191,28 @@ import SignComponent from '../SignComponent/SignComponent.vue';
 
           <h3>Preparação</h3>
           <p>Delimitação do escopo da pesquisa</p>
-          <button class="btn btn-primary">Mais informações</button>
+          <button class="btn btn-primary" @click="scrollToSection('execucao-preparacao')">Mais informações</button>
         </li>
 
         <li class="card basic">
           <span class="material-symbols-outlined">edit</span>
           <h3>Coleta de dados</h3>
           <p>Inspeção dos signos da interface</p>
-          <button class="btn btn-primary">Mais informações</button>
+          <button class="btn btn-primary" @click="scrollToSection('execucao-coleta')">Mais informações</button>
         </li>
 
         <li class="card basic">
           <span class="material-symbols-outlined">compare_arrows</span>
           <h3>Consolidação</h3>
           <p>Contraste e comparação das metamensagens</p>
-          <button class="btn btn-primary">Mais informações</button>
+          <button class="btn btn-primary" @click="scrollToSection('execucao-consolidacao')">Mais informações</button>
         </li>
 
         <li class="card basic">
           <span class="material-symbols-outlined">assignment</span>
           <h3>Relato dos resultados</h3>
           <p>Avaliação de comunicabilidade do sistema</p>
-          <button class="btn btn-primary">Mais informações</button>
+          <button class="btn btn-primary" @click="scrollToSection('execucao-relato')">Mais informações</button>
         </li>
       </ul>
 
@@ -228,7 +248,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
         </li>
       </ul>
 
-      <h3 id="execucao-coleta-de-dados">Coleta de Dados</h3>
+      <h3 id="execucao-coleta">Coleta de Dados</h3>
       <p>Nesta fase, o avaliador mergulha na interface para identificar e interpretar os signos que compõem a metamensagem do designer. Esta etapa envolve uma análise sistemática de diferentes categorias de signos, cada uma revelando uma faceta da comunicação do sistema.</p>
 
       <h4>O que deve ser feito</h4>

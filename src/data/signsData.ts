@@ -106,5 +106,14 @@ export const signsData: Record<string, SignData> = {
       title: 'Painel Lateral (Estrutura)',
       description: 'Utiliza rótulos textuais (ex: "Tipo de Item", "Autor") que explicam ao usuário a natureza e a organização da informação apresentada.'
     }
-  }
+  },
+
+  // lista de exemplos
+  // Estáticos:
+  'static-1': {
+    static: {
+      title: 'Botão',
+      description: 'Um botão simples.'
+    }
+  },
 }

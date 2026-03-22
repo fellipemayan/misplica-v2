@@ -80,3 +80,15 @@
   }
 }
 
+input {
+  padding: 0.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--base-radius);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
