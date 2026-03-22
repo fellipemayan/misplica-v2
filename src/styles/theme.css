@@ -17,7 +17,7 @@
     oklch(0.95 0 0), oklch(0.25 0 0));
 
   --clr-primary: light-dark(
-    oklch(0.67 0.2 250), oklch(0.8 0.2 250));
+    oklch(0.55 0.2 250), oklch(0.8 0.2 250));
   --clr-static: light-dark(
     oklch(0.5 0.07 175), oklch(0.8 0.08 175));
   --clr-dynamic: light-dark(
