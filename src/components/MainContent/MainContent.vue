@@ -133,6 +133,7 @@ const scrollToSection = (id: string) => {
 
       <h4>Exemplos</h4>
       <CalloutComponent message="Os elementos abaixo são, de forma geral, exemplos de signos dinâmicos." />
+      <ExampleSignList type="dynamic" />
 
       <h3 id="linguagem-signos-metalinguisticos">Signos Metalinguísticos</h3>
       <p>Signos que se referem a outros signos e os explicam, fornecendo informações explícitas sobre como outros signos podem ser utilizados durante a interação. Eles representam a "voz" direta do designer, instruindo o usuário sobre como usar o sistema.</p>
@@ -169,6 +170,7 @@ const scrollToSection = (id: string) => {
 
       <h4>Exemplos</h4>
       <CalloutComponent message="Os elementos abaixo são, de forma geral, exemplos de signos metalinguísticos." />
+      <ExampleSignList type="metalinguistic" />
 
       <hr>
     </section>

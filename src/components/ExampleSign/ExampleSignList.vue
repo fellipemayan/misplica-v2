@@ -8,6 +8,12 @@ import SimpleIcon from './Examples/static/SimpleIcon.vue';
 import SimpleLink from './Examples/static/SimpleLink.vue';
 import SimpleLabel from './Examples/static/SimpleLabel.vue';
 import SimpleImage from './Examples/static/SimpleImage.vue';
+import DynamicLoader from './Examples/dynamic/DynamicLoader.vue';
+import DynamicHover from './Examples/dynamic/DynamicHover.vue';
+import DynamicToggle from './Examples/dynamic/DynamicToggle.vue';
+import DynamicSelect from './Examples/dynamic/DynamicSelect.vue';
+import DynamicMove from './Examples/dynamic/DynamicMove.vue';
+import DynamicScroll from './Examples/dynamic/DynamicScroll.vue';
 
 const props = defineProps({
   type: {
@@ -33,7 +39,12 @@ const examplesMap: Record<string, SignExample[]> = {
     { id: 'static-6', alt: 'Uma imagem:', component: SimpleImage },
   ],
   'dynamic': [
-    { id: 'dynamic-1', alt: 'Um botão dinâmico:', component: SimpleButton },
+    { id: 'dynamic-1', alt: 'O carregamento de uma informação:', component: DynamicLoader },
+    { id: 'dynamic-2', alt: 'Uma mudança ao interagir:', component: DynamicHover },
+    { id: 'dynamic-3', alt: 'Uma mudança ao tocar:', component: DynamicToggle },
+    { id: 'dynamic-4', alt: 'Uma mudança ao escolher uma opção:', component: DynamicSelect },
+    { id: 'dynamic-5', alt: 'A possibilidade de mover um item:', component: DynamicMove },
+    { id: 'dynamic-6', alt: 'A possibilidade de navegar na página:', component: DynamicScroll },
   ],
   'metalinguistic': [
     { id: 'metalinguistic-1', alt: 'Um signo metalinguístico:', component: SimpleButton },
@@ -82,7 +93,7 @@ const activeExamples = computed(() => examplesMap[props.type] || []);
   aspect-ratio: 5 / 4;
   border: 1px solid var(--clr-border);
   border-radius: calc(var(--base-radius) + 0.5rem);
-  padding: 1.5rem;
+  overflow: hidden;
   background-color: var(--clr-bg-alt);
   align-items: center;
   justify-content: center;

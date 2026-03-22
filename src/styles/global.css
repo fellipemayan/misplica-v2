@@ -80,7 +80,19 @@
   }
 }
 
-input {
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 240px;
+
+  > * {
+    flex: 1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+input, select {
   padding: 0.5rem;
   border: 1px solid var(--clr-border);
   border-radius: var(--base-radius);
@@ -90,5 +102,9 @@ label {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
+  font-weight: 500;
+}
+
+option:checked {
   font-weight: 500;
 }

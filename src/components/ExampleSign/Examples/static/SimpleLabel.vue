@@ -5,15 +5,3 @@
   </div>
 </template>
 
-<style scoped>
-.input-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 240px;
-
-  > * {
-    flex: 1;
-  }
-}
-</style>
