@@ -65,6 +65,7 @@ const activeIcon = computed(() => {
       v-if="isActive && activeVision"
       class="sign-indicator"
       :class="`sign-pill-${activeXRay}`"
+      @click.stop
       :popovertarget="`popover-${id}`"
       aria-label="Ver análise semiótica"
     >

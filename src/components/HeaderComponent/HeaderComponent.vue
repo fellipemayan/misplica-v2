@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AboutDialog from '../AboutDialog/AboutDialog.vue';
 import SignComponent from '../SignComponent/SignComponent.vue';
 </script>
 
@@ -9,13 +10,7 @@ import SignComponent from '../SignComponent/SignComponent.vue';
       <nav class="header-nav">
         <ul class="header-nav-list">
           <li class="header-nav-item">
-            <SignComponent
-              id="botao-sobre"
-              tag="button"
-              class="btn btn-icon btn-secondary"
-            >
-              <span class="material-symbols-outlined">help</span>
-            </SignComponent>
+            <AboutDialog />
           </li>
           <li class="show-on-mobile">
             <SignComponent

@@ -39,7 +39,7 @@
   --clr-text: light-dark(
     oklch(0.1 0 0)), oklch(0.9851 0 0);
   --clr-text-muted: light-dark(
-    oklch(0.3 0 0)), oklch(0.9 0 0);
+    oklch(0.3 0 0)), oklch(0.8 0 0);
   --clr-text-btn: light-dark(
   oklch(0.9851 0 0), oklch(0.14 0 0));
 
@@ -94,7 +94,7 @@ html[data-contrast="high"] {
   --clr-text: light-dark(
     oklch(0 0 0)), oklch(1 0 0);
   --clr-text-muted: light-dark(
-    oklch(0.3 0 0)), oklch(0.9 0 0);
+    oklch(0.3 0 0)), oklch(0.8 0 0);
   --clr-text-btn: light-dark(
   oklch(1 0 0), oklch(0.14 0 0));
 

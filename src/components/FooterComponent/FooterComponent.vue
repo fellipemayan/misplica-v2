@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import SignComponent from '../SignComponent/SignComponent.vue';
+import ChangelogDialog from '../AboutDialog/ChangelogDialog.vue';
 
 </script>
 
 <template>
   <footer class="footer">
-    <p>&copy; Fellipe Mayan e Thiago Reis</p>
+    <div>
+      <p>&copy; Fellipe Mayan e Thiago Reis</p>
+      <ChangelogDialog />
+    </div>
   </footer>
 </template>
 
@@ -14,18 +17,27 @@ import SignComponent from '../SignComponent/SignComponent.vue';
   grid-column: full-start / full-end;
   grid-row: 3;
 
-  display: grid;
-  grid-template-columns: subgrid;
+  display: flex;
 
   align-items: center;
   padding-block: 1rem;
   background-color: var(--clr-bg);
   border-top: 1px solid var(--clr-border);
+  padding-inline: 2rem;
 
+  > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    max-width: 180ch;
+
+    p {
+      margin-right: auto;
+    }
+  }
 }
 
-p {
-  grid-column: content-start / content-end;
-}
 
 </style>
