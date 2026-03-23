@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePreferencesStore } from '@/stores/preferenceStore';
+import { usePreferencesStore } from '@/stores/preferencesStore';
 import SignComponent from '../SignComponent/SignComponent.vue';
 
 
@@ -174,6 +174,7 @@ h2 {
   font-size: 0.9rem;
   cursor: pointer;
   color: var(--clr-text);
+  margin: 0;
 }
 
 input[type="checkbox"] {

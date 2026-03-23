@@ -19,8 +19,8 @@ const selectedOptionText = computed(() => {
 
 <template>
   <div class="input-wrapper">
-    <label for="example-input">Título</label>
-    <select v-model="selectedOption" id="example-input">
+    <label for="example-input-dynamic">Título</label>
+    <select v-model="selectedOption" id="example-input-dynamic">
       <option value="option1">Opção 1</option>
       <option value="option2">Opção 2</option>
       <option value="option3">Opção 3</option>

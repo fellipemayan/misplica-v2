@@ -690,9 +690,13 @@ section {
     --background: var(--clr-bg-alt);
     --color: var(--clr-text-muted);
 
-    background-color: light-dark(oklch(from var(--background) l c h / 0.05), oklch(from var(--background) l c h / 0.1));
+    background-color: oklch(from var(--background) l c h / 0.05);
     color: var(--color);
-    border: 1px solid oklch(from var(--background) l calc(c - 0.5) h / 0.5);
+    border: 1px solid
+      light-dark(
+        oklch(from var(--background) calc(l - 0.2) calc(c - 0.06) h / 0.3),
+        oklch(from var(--background) calc(l + 0.2) calc(c - 0.06) h / 0.2)
+      );
     border-radius: calc(var(--base-radius) + 1rem);
     padding: 1rem;
     min-width: 18ch;

@@ -17,6 +17,8 @@
     oklch(0.97 0 0), oklch(0.2 0 0));
   --clr-bg-alt-hover: light-dark(
     oklch(0.95 0 0), oklch(0.25 0 0));
+  --clr-bg-inverse: light-dark(
+    oklch(0.25 0 0), oklch(0.99 0 0));
 
   --clr-primary: light-dark(
     oklch(0.55 0.2 250), oklch(0.8 0.2 250));
@@ -26,6 +28,13 @@
     oklch(0.61 0.11 83), oklch(0.8 0.1 83));
   --clr-metalinguistic: light-dark(
     oklch(0.57 0.13 350), oklch(0.8 0.1 350));
+
+  --clr-success: light-dark(
+    oklch(0.5 0.15 135), oklch(0.8 0.15 135));
+  --clr-warning: light-dark(
+    oklch(0.5 0.3 90), oklch(0.8 0.15 90));
+  --clr-error: light-dark(
+    oklch(0.5 0.2 30), oklch(0.8 0.25 30));
 
   --clr-text: light-dark(
     oklch(0.1 0 0)), oklch(0.9851 0 0);
@@ -74,6 +83,13 @@ html[data-contrast="high"] {
     oklch(0.8 0.6 80), oklch(0.8 0.5 80));
   --clr-metalinguistic: light-dark(
     oklch(0.57 0.5 350), oklch(0.8 0.5 350));
+
+  --clr-success: light-dark(
+    oklch(0.5 0.6 135), oklch(0.8 0.5 135));
+  --clr-warning: light-dark(
+    oklch(0.5 0.8 112), oklch(0.8 0.5 112));
+  --clr-error: light-dark(
+    oklch(0.5 0.6 30), oklch(0.8 0.5 30));
 
   --clr-text: light-dark(
     oklch(0 0 0)), oklch(1 0 0);

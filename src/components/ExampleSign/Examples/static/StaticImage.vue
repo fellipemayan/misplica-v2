@@ -8,5 +8,6 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: var(--base-radius);
+  border-radius: calc(1rem - 1px);
 }
 </style>

@@ -14,6 +14,12 @@ import DynamicToggle from './Examples/dynamic/DynamicToggle.vue';
 import DynamicSelect from './Examples/dynamic/DynamicSelect.vue';
 import DynamicMove from './Examples/dynamic/DynamicMove.vue';
 import DynamicScroll from './Examples/dynamic/DynamicScroll.vue';
+import MetalinguisticHover from './Examples/metalinguistic/MetalinguisticHover.vue';
+import MetalinguisticDialog from './Examples/metalinguistic/MetalinguisticDialog.vue';
+import MetalinguisticText from './Examples/metalinguistic/MetalinguisticText.vue';
+import MetalinguisticInput from './Examples/metalinguistic/MetalinguisticInput..vue';
+import MetalinguisticAlert from './Examples/metalinguistic/MetalinguisticAlert.vue';
+import MetalinguisticFeedback from './Examples/metalinguistic/MetalinguisticFeedback.vue';
 
 const props = defineProps({
   type: {
@@ -47,7 +53,13 @@ const examplesMap: Record<string, SignExample[]> = {
     { id: 'dynamic-6', alt: 'A possibilidade de navegar na página:', component: DynamicScroll },
   ],
   'metalinguistic': [
-    { id: 'metalinguistic-1', alt: 'Um signo metalinguístico:', component: StaticButton },
+    { id: 'metalinguistic-1', alt: 'Um tooltip:', component: MetalinguisticHover },
+    { id: 'metalinguistic-2', alt: 'Um diálogo explicativo:', component: MetalinguisticDialog },
+    { id: 'metalinguistic-3', alt: 'Explicações sobre o sistema:', component: MetalinguisticText },
+    { id: 'metalinguistic-4', alt: 'Especificações ou instruções:', component: MetalinguisticInput },
+    { id: 'metalinguistic-5', alt: 'Um alerta do sistema:', component: MetalinguisticAlert },
+    { id: 'metalinguistic-6', alt: 'Uma solicitação direta ao usuário:', component: MetalinguisticFeedback },
+
   ]
 };
 
