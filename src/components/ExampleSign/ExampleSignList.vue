@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, type Component } from 'vue';
 
-import SimpleButton from './Examples/static/SimpleButton.vue';
 import SignComponent from '../SignComponent/SignComponent.vue';
-import SimpleText from './Examples/static/SimpleText.vue';
-import SimpleIcon from './Examples/static/SimpleIcon.vue';
-import SimpleLink from './Examples/static/SimpleLink.vue';
-import SimpleLabel from './Examples/static/SimpleLabel.vue';
-import SimpleImage from './Examples/static/SimpleImage.vue';
+import StaticButton from './Examples/static/StaticButton.vue';
+import StaticText from './Examples/static/StaticText.vue';
+import StaticIcon from './Examples/static/StaticIcon.vue';
+import StaticLink from './Examples/static/StaticLink.vue';
+import StaticLabel from './Examples/static/StaticLabel.vue';
+import StaticImage from './Examples/static/StaticImage.vue';
 import DynamicLoader from './Examples/dynamic/DynamicLoader.vue';
 import DynamicHover from './Examples/dynamic/DynamicHover.vue';
 import DynamicToggle from './Examples/dynamic/DynamicToggle.vue';
@@ -31,12 +31,12 @@ interface SignExample {
 
 const examplesMap: Record<string, SignExample[]> = {
   'static': [
-    { id: 'static-1', alt: 'Um texto simples:', component: SimpleText},
-    { id: 'static-2', alt: 'Um botão simples:', component: SimpleButton },
-    { id: 'static-3', alt: 'Um link:', component: SimpleLink },
-    { id: 'static-4', alt: 'Um rótulo de campo de entrada:', component: SimpleLabel},
-    { id: 'static-5', alt: 'Um ícone simples:', component: SimpleIcon },
-    { id: 'static-6', alt: 'Uma imagem:', component: SimpleImage },
+    { id: 'static-1', alt: 'Um texto simples:', component: StaticText},
+    { id: 'static-2', alt: 'Um botão simples:', component: StaticButton },
+    { id: 'static-3', alt: 'Um link:', component: StaticLink },
+    { id: 'static-4', alt: 'Um rótulo de campo de entrada:', component: StaticLabel},
+    { id: 'static-5', alt: 'Um ícone simples:', component: StaticIcon },
+    { id: 'static-6', alt: 'Uma imagem:', component: StaticImage },
   ],
   'dynamic': [
     { id: 'dynamic-1', alt: 'O carregamento de uma informação:', component: DynamicLoader },
@@ -47,7 +47,7 @@ const examplesMap: Record<string, SignExample[]> = {
     { id: 'dynamic-6', alt: 'A possibilidade de navegar na página:', component: DynamicScroll },
   ],
   'metalinguistic': [
-    { id: 'metalinguistic-1', alt: 'Um signo metalinguístico:', component: SimpleButton },
+    { id: 'metalinguistic-1', alt: 'Um signo metalinguístico:', component: StaticButton },
   ]
 };
 
@@ -93,7 +93,6 @@ const activeExamples = computed(() => examplesMap[props.type] || []);
   aspect-ratio: 5 / 4;
   border: 1px solid var(--clr-border);
   border-radius: calc(var(--base-radius) + 0.5rem);
-  overflow: hidden;
   background-color: var(--clr-bg-alt);
   align-items: center;
   justify-content: center;
