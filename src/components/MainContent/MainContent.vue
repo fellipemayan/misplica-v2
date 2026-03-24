@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CollectionAnimation from '../Animations/CollectionAnimation.vue';
+import ConsolidationAnimation from '../Animations/ConsolidationAnimation.vue';
 import CalloutComponent from '../CalloutComponent/CalloutComponent.vue';
 import ExampleSignList from '../ExampleSign/ExampleSignList.vue';
 import SignComponent from '../SignComponent/SignComponent.vue';
@@ -50,7 +52,6 @@ const scrollToSection = (id: string) => {
         A Engenharia Semiótica classifica os signos em interfaces de sistemas interativos em três tipos principais:
       </p>
 
-      <!-- TODO: adicionar o scroll para a seção -->
       <ul class="card-list">
         <li class="card static">
           <span class="material-symbols-outlined">widgets</span>
@@ -252,6 +253,7 @@ const scrollToSection = (id: string) => {
 
       <h3 id="execucao-coleta">Coleta de Dados</h3>
       <p>Nesta fase, o avaliador mergulha na interface para identificar e interpretar os signos que compõem a metamensagem do designer. Esta etapa envolve uma análise sistemática de diferentes categorias de signos, cada uma revelando uma faceta da comunicação do sistema.</p>
+      <CollectionAnimation  />
 
       <h4>O que deve ser feito</h4>
       <ul>
@@ -287,6 +289,8 @@ const scrollToSection = (id: string) => {
       <p>
         Esta fase é o coração analítico do MIS, onde as metamensagens parciais são sintetizadas, e os problemas de comunicabilidade são identificados e julgados. É aqui que o avaliador constrói uma compreensão integrada da metacomunicação do designer.
       </p>
+
+      <ConsolidationAnimation />
 
       <h4>O que deve ser feito</h4>
       <ul>

@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue';
 import DialogComponent from '../DialogComponent/DialogComponent.vue';
 import { useFeedbackStore } from '@/stores/feedbackStore';
+import { useSnackbar } from '@/composables/useSnackbar';
 const props = defineProps<{
   widgetId: string;
 }>();
@@ -18,7 +19,12 @@ const comment = ref('');
 const isSubmitting = ref(false);
 const isSuccess = ref(false);
 
+const { showSnackbar } = useSnackbar();
+
 const handleVote = (action: 'like' | 'dislike') => {
+  rating.value = 0;
+  comment.value = '';
+
   if (userVote.value === action) {
     currentAction.value = action === 'like' ? 'remove_like' : 'remove_dislike';
     feedbackStore.setVote(props.widgetId, null);
@@ -84,15 +90,14 @@ const submitFeedback = async () => {
     });
 
     if (response.ok) {
-      isSuccess.value = true;
-      setTimeout(() => {
-        isModalOpen.value = false;
-      }, 2500);
+      isModalOpen.value = false;
+      showSnackbar('Feedback enviado com sucesso! Obrigado.', 'success');
     } else {
       throw new Error('Falha na API do Formspree');
     }
   } catch (error) {
-    alert("Houve um erro ao enviar seu feedback. Tente novamente mais tarde.");
+    isModalOpen.value = false;
+    showSnackbar('Houve um erro ao enviar. Tente novamente.', 'error');
     console.error(error);
   } finally {
     isSubmitting.value = false;
