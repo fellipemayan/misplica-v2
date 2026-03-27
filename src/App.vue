@@ -7,7 +7,6 @@ import MainContent from './components/MainContent/MainContent.vue';
 import SidebarComponent from './components/SidebarComponent/SidebarComponent.vue';
 import XRayComponent from './components/XRayComponent/XRayComponent.vue';
 import SnackbarComponent from './components/SnackbarComponent/SnackbarComponent.vue';
-
 const isDesktop = ref(true);
 
 onMounted(() => {

@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import CollectionAnimation from '../Animations/CollectionAnimation.vue';
-import ConsolidationAnimation from '../Animations/ConsolidationAnimation.vue';
+import AnimationComponent from '../Animations/AnimationComponent.vue';
+import AnimColeta from '../Animations/AnimColeta.vue';
+import AnimConsolid from '../Animations/AnimConsolid.vue';
+import AnimPreparacao from '../Animations/AnimPreparacao.vue';
+import AnimRelato from '../Animations/AnimRelato.vue';
 import CalloutComponent from '../CalloutComponent/CalloutComponent.vue';
 import ExampleSignList from '../ExampleSign/ExampleSignList.vue';
 import SignComponent from '../SignComponent/SignComponent.vue';
@@ -16,6 +19,12 @@ const scrollToSection = (id: string) => {
 
   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 };
+
+// 3. Define os tempos (em milissegundos) de cada etapa
+const temposPreparacao = [2500, 2500, 3000];
+const temposColeta = [1500, 1500, 1500, 1500, 3000];
+const temposConsolidacao = [2250, 2250, 2250, 2250];
+const temposRelato = [1500, 1500, 3000, 3000];
 </script>
 
 <template>
@@ -221,6 +230,11 @@ const scrollToSection = (id: string) => {
 
       <h3 id="execucao-preparacao">Preparação</h3>
       <p>Esta fase inicial é crucial para definir o escopo e o foco da avaliação, garantindo que a inspeção seja direcionada e eficiente. É o momento de estabelecer a base para a compreensão da metacomunicação do designer.</p>
+      <AnimationComponent :step-times="temposPreparacao" :autoplay="true">
+        <template #default="{ currentStep }">
+          <AnimPreparacao :step="currentStep" />
+        </template>
+      </AnimationComponent>
 
       <h4>O que deve ser feito</h4>
       <ul>
@@ -253,7 +267,11 @@ const scrollToSection = (id: string) => {
 
       <h3 id="execucao-coleta">Coleta de Dados</h3>
       <p>Nesta fase, o avaliador mergulha na interface para identificar e interpretar os signos que compõem a metamensagem do designer. Esta etapa envolve uma análise sistemática de diferentes categorias de signos, cada uma revelando uma faceta da comunicação do sistema.</p>
-      <CollectionAnimation  />
+      <AnimationComponent :step-times="temposColeta" :autoplay="true">
+        <template #default="{ currentStep }">
+          <AnimColeta :step="currentStep" />
+        </template>
+      </AnimationComponent>
 
       <h4>O que deve ser feito</h4>
       <ul>
@@ -289,8 +307,12 @@ const scrollToSection = (id: string) => {
       <p>
         Esta fase é o coração analítico do MIS, onde as metamensagens parciais são sintetizadas, e os problemas de comunicabilidade são identificados e julgados. É aqui que o avaliador constrói uma compreensão integrada da metacomunicação do designer.
       </p>
+      <AnimationComponent :step-times="temposConsolidacao" :autoplay="true">
+        <template #default="{ currentStep }">
+          <AnimConsolid :step="currentStep" />
+        </template>
+      </AnimationComponent>
 
-      <ConsolidationAnimation />
 
       <h4>O que deve ser feito</h4>
       <ul>
@@ -326,6 +348,11 @@ const scrollToSection = (id: string) => {
       <p>
         A fase final do MIS consiste em documentar os achados da avaliação de forma clara e acionável, comunicando os problemas de comunicabilidade identificados. O relatório é o produto final da inspeção, traduzindo as análises complexas em informações úteis para o processo de design.
       </p>
+      <AnimationComponent :step-times="temposRelato" :autoplay="true">
+        <template #default="{ currentStep }">
+          <AnimRelato :step="currentStep" />
+        </template>
+      </AnimationComponent>
 
       <h4>O que deve ser feito</h4>
       <ul>
