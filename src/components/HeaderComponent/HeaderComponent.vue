@@ -6,7 +6,17 @@ import SignComponent from '../SignComponent/SignComponent.vue';
 <template>
   <header class="header">
     <div class="header-wrapper">
-      <h1 class="header-title">MISplica</h1>
+      <div class="logo-section">
+        <h1 class="header-title">MISplica</h1>
+        <SignComponent
+          id="insignia-versao"
+          tag="span"
+          class="version-badge"
+          popovertarget="drawer-about"
+        >
+          v2.0
+        </SignComponent>
+      </div>
       <nav class="header-nav">
         <ul class="header-nav-list">
           <li class="header-nav-item">
@@ -64,9 +74,23 @@ import SignComponent from '../SignComponent/SignComponent.vue';
   align-items: center;
 }
 
+.logo-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: auto;
+}
+
+.version-badge {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--clr-bg-alt);
+  color: var(--clr-text-muted);
+  border-radius: 4px;
+}
+
 h1 {
   font-size: 1.5rem;
-  margin-right: auto;
 }
 
 ul {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import DialogComponent from '../DialogComponent/DialogComponent.vue';
 import { useFeedbackStore } from '@/stores/feedbackStore';
 import { useSnackbar } from '@/composables/useSnackbar';
+import PopoverComponent from '../PopoverComponent/PopoverComponent.vue';
 const props = defineProps<{
   widgetId: string;
 }>();
@@ -127,7 +127,12 @@ const submitFeedback = async () => {
       </button>
     </div>
 
-    <DialogComponent v-model:open="isModalOpen">
+    <PopoverComponent
+      v-model:open="isModalOpen"
+      signId="feedback-modal"
+      :persistent="true"
+      width="sm"
+    >
       <div v-if="!isSuccess" class="form-view">
         <h3 class="modal-title">{{ modalContent.title }}</h3>
         <p class="modal-desc">{{ modalContent.desc }}</p>
@@ -172,7 +177,7 @@ const submitFeedback = async () => {
         <h3>Feedback Enviado!</h3>
         <p>Muito obrigado por ajudar a melhorar a plataforma.</p>
       </div>
-    </DialogComponent>
+    </PopoverComponent>
   </div>
 </template>
 

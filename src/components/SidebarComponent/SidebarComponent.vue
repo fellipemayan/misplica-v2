@@ -115,6 +115,11 @@ const scrollToSection = (id: string) => {
 
   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 
+  const mobileDrawer = document.getElementById('drawer-sidebar');
+  if (mobileDrawer?.matches(':popover-open')) {
+    mobileDrawer.hidePopover();
+  }
+
   if (scrollTimeout) clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(() => {
     isClickScrolling.value = false;

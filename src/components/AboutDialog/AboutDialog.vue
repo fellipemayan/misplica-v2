@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import DialogComponent from '../DialogComponent/DialogComponent.vue';
 import SignComponent from '../SignComponent/SignComponent.vue';
+import PopoverComponent from '../PopoverComponent/PopoverComponent.vue';
 
-const isOpen = ref(false);
-
-const openModal = () => { isOpen.value = true; };
-const closeModal = () => { isOpen.value = false; };
+const isPopoverOpen = ref(false);
+const openModal = () => { isPopoverOpen.value = true; };
+const closeModal = () => { isPopoverOpen.value = false; };
 </script>
 
 <template>
@@ -19,7 +18,12 @@ const closeModal = () => { isOpen.value = false; };
     <span class="material-symbols-outlined">help</span>
   </SignComponent>
 
-  <DialogComponent v-model:open="isOpen">
+  <PopoverComponent
+    v-model:open="isPopoverOpen"
+    signId="modal-sobre"
+    :persistent="false"
+    width="md"
+  >
     <div class="about-content">
       <h2 class="title">Sobre o MISplica</h2>
 
@@ -50,15 +54,10 @@ const closeModal = () => { isOpen.value = false; };
         </button>
       </div>
     </div>
-  </DialogComponent>
+  </PopoverComponent>
 </template>
 
 <style scoped>
-.dialog {
-  max-width: 640px;
-  max-height: 80%;
-}
-
 .btn-header {
   display: flex;
   align-items: center;

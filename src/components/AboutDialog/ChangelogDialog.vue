@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import DialogComponent from '../DialogComponent/DialogComponent.vue';
+import PopoverComponent from '../PopoverComponent/PopoverComponent.vue';
 
 const isOpen = ref(false);
 
@@ -56,7 +56,12 @@ const updates = [
     Changelog
   </button>
 
-  <DialogComponent v-model:open="isOpen">
+  <PopoverComponent
+    v-model:open="isOpen"
+    signId="modal-changelog"
+    :persistent="false"
+    width="md"
+  >
     <h2 class="title">Últimas Atualizações</h2>
     <p class="subtitle">Acompanhe a evolução do projeto.</p>
 
@@ -77,7 +82,7 @@ const updates = [
         </ul>
       </div>
     </div>
-  </DialogComponent>
+  </PopoverComponent>
 </template>
 
 <style scoped>

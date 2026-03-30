@@ -12,6 +12,18 @@ export interface SignData {
 }
 
 export const signsData: Record<string, SignData> = {
+  'insignia-versao': {
+    metalinguistic: {
+      title: 'Versão do MISplica',
+      description: 'Exibe a versão atual do MISplica.'
+    }
+  },
+  'modal-sobre': {
+    metalinguistic: {
+      title: 'Diálogo de Sobre',
+      description: 'Exibe informações sobre o projeto MISplica.'
+    }
+  },
   'botao-sobre': {
     static: {
       title: 'Botão sobre',
@@ -116,4 +128,27 @@ export const signsData: Record<string, SignData> = {
       description: 'Um botão simples.'
     }
   },
+  // Metalinguísticos:
+  'example-meta-2': {
+    metalinguistic: {
+      title: 'Exemplo de Signo Metalinguístico',
+      description: 'Este é um exemplo de signo metalinguístico que demonstra como a linguagem pode se referir a si mesma.'
+    }
+  },
+
+  // Genéricos:
+  'feedback-modal': {
+    metalinguistic: {
+      title: 'Diálogo de Feedback',
+      description: 'Exibe um formulário para o usuário enviar feedback sobre o projeto MISplica.'
+    }
+  },
+
+  // Rodapé:
+  'modal-changelog': {
+    metalinguistic: {
+      title: 'Diálogo de Changelog',
+      description: 'Exibe as últimas atualizações do projeto MISplica.'
+    }
+  }
 }
