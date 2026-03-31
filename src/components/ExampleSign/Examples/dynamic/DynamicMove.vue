@@ -9,7 +9,7 @@ const position = ref({
   x: 0,
   y: 0
 });
-const isDragging = ref(false); 
+const isDragging = ref(false);
 const hasTransition = ref(true);
 
 const areaRef = ref<HTMLElement | null>(null);
@@ -25,7 +25,7 @@ let maxY = 0;
 
 const startDrag = (e: MouseEvent | TouchEvent) => {
   if (returnTimeout) clearTimeout(returnTimeout);
-  
+
   isDragging.value = true;
   hasTransition.value = false;
 
@@ -39,8 +39,8 @@ const startDrag = (e: MouseEvent | TouchEvent) => {
     maxY = (areaHeight - itemHeight) / 2;
   }
 
-  const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-  const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+  const clientX = 'touches' in e ? e.touches[0]!.clientX : e.clientX;
+  const clientY = 'touches' in e ? e.touches[0]!.clientY : e.clientY;
 
   startX = clientX;
   startY = clientY;
@@ -60,8 +60,8 @@ const drag = (e: MouseEvent | TouchEvent) => {
   if (!isDragging.value) return;
   e.preventDefault();
 
-  const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-  const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+  const clientX = 'touches' in e ? e.touches[0]!.clientX : e.clientX;
+  const clientY = 'touches' in e ? e.touches[0]!.clientY : e.clientY;
 
   const dx = clientX - startX;
   const dy = clientY - startY;
@@ -89,7 +89,7 @@ const endDrag = () => {
 
   returnTimeout = setTimeout(() => {
     position.value = { x: 0, y: 0 };
-  }, 1000); 
+  }, 1000);
 };
 
 onUnmounted(() => {
@@ -106,7 +106,7 @@ const dynamicStyle = computed(() => ({
 
 <template>
   <div class="movable-area" ref="areaRef">
-    <div 
+    <div
       :style="dynamicStyle"
       ref="itemRef"
       class="movable-item"
@@ -141,7 +141,7 @@ const dynamicStyle = computed(() => ({
   gap: 0.5rem;
 
   position: absolute;
-  top: 50%; 
-  left: 50%; 
+  top: 50%;
+  left: 50%;
 }
 </style>
