@@ -3,11 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>MIS-Xplica</title>
-		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/typography.css" />
-		<link rel="stylesheet" href="css/colors.css" />
-		<link rel="stylesheet" href="css/layout.css" />
+		<title>MISplica</title>
+		<link rel="icon" type="image/svg+xml" href="media/images/favicon.svg">
+		<link rel="stylesheet" href="./main.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -20,23 +18,45 @@
 	<body>
 		<header>
 			<div>
-				<h3>MIS-Xplica</h3>
-				<button class="icon secondary" id="open-about-button">
+				<div class="sign-wrapper"
+					data-sign-type="dinamico"
+					data-dinamico-name="Abrir sumário"
+					data-dinamico-explanation="O botão, que aparece em resposta a tamanhos de tela menores, abre o painel do sumário.">
+					<button class="icon secondary" id="open-summary-button">
+						<span class="material-symbols-outlined">menu</span>
+					</button>
+				</div>
+				<h3 style="flex: 1">MISplica</h3>
+				
+				<div class="sign-wrapper"
+					data-sign-type="dinamico"
+					data-dinamico-name="Abrir controles"
+					data-dinamico-explanation="O botão, que aparece em resposta a tamanhos de tela menores, abre o painel de controles do MISplica.">
+					<button class="icon secondary" id="open-controls-button">
+						<span class="material-symbols-outlined">settings</span>
+					</button>
+				</div>
+				<div class="actions">
+					<div
+					class="sign-wrapper"
+					data-sign-type="estatico dinamico metalinguistico"
+					data-estatico-name="Botão"
+					data-estatico-explanation="Botões são signos estáticos que podem ser clicados para realizar ações. Eles também podem ter comportamentos dinâmicos, como abrir diálogos ou executar funções."
+					data-dinamico-name="Abrir diálogo"
+					data-dinamico-explanation="Clicar no botão abre um diálogo com informações sobre o MISplica."
+					data-metalinguistico-name="Sobre o MISplica"
+					data-metalinguistico-explanation="O diálogo fornece informações adicionais sobre o MISplica, explicando seu propósito e como ele pode ser usado."
+					>
+						<button class="icon secondary" id="open-about-button">
 					<span class="material-symbols-outlined">help</span>
 				</button>
 			</div>
-			<div id="mobile-navigation-header">
-				<button class="icon ghost" id="open-summary-button">
-					<span class="material-symbols-outlined">menu</span>
-				</button>
-				<button class="icon ghost" id="open-controls-button">
-					<span class="material-symbols-outlined">settings</span>
-				</button>
+				</div>
 			</div>
 		</header>
 
 		<div id="floating-menu" class="floating-menu">
-			<span>Raio-X </span>
+			<span>Raio-X </span>
 			<button
 				id="x-ray-static"
 				class="menu-button x-ray-toggle"
@@ -70,11 +90,13 @@
 				aria-label="Sumário"
 			>
 				<h4>Sumário</h4>
-				<ul
-					data-sign-type="dinamico"
-					data-sign-name="Lista de Sumário"
-					data-sign-explanation="Clicar nos índices leva a seções específicas do documento."
-				>
+				<div
+						class="sign-wrapper"
+						data-sign-type="dinamico"
+						data-dinamico-name="Lista do sumário"
+						data-dinamico-explanation="Clicar nos índices leva a seções específicas do documento."
+					>
+				<ul>
 					<li><a href="#introducao">Introdução</a></li>
 					<li>
 						<a href="#linguagem-interfaces"
@@ -91,25 +113,51 @@
 
 			<div class="content">
 				<section id="hero">
-					<h1
+					<div
+						class="sign-wrapper"
 						data-sign-type="estatico"
-						data-sign-name="Título"
-						data-sign-explanation="Este parágrafo fornece informações fixas e pode ser interpretado sem interação."
+						data-estatico-name="Título"
+						data-estatico-explanation="Títulos fornecem informações fixas e podem ser interpretados sem interação."
 					>
-						MIS: o Método de Inspeção Semiótica
-					</h1>
-					<p>Um guia sobre o método e como aplicá-lo.</p>
+						<h1>MIS: o Método de Inspeção Semiótica</h1>
+					</div>
+					<div
+						class="sign-wrapper"
+						data-sign-type="metalinguistico"
+						data-metalinguistico-name="Subtítulo"
+						data-metalinguistico-explanation="O subtítulo explica o propósito do MISplica."
+					>
+					<p
+						data-sign-type="metalinguistico"
+						data-sign-name="Subtítulo"
+						data-sign-explanation="O subtítulo explica o propósito do MISplica, que é fornecer um guia sobre o Método de Inspeção Semiótica."
+					>
+					</p>
+						Um guia sobre o método e como aplicá-lo.
+					</p>
 				</section>
 
 				<section id="introducao">
 					<span class="section-name">Introdução</span>
-					<h2>A Conversa por trás da interface</h2>
+					<div class="sign-wrapper"
+						data-sign-type="estatico"
+						data-estatico-name="Título de seção"
+						data-estatico-explanation="Títulos de seção fornecem informações fixas e pode ser interpretado sem interação. Todos os títulos desta página são signos estáticos">
+						<h2>
+							A conversa por trás da interface
+						</h2>
+					</div>
 					<p>
 						Já parou para pensar que cada clique, cada ícone e cada
 						mensagem em uma interface digital é parte de uma
 						conversa?
 					</p>
-					<p>
+					<div class="sign-wrapper"
+						data-sign-type="estatico"
+						data-estatico-name="Parágrafo"
+						data-estatico-explanation="Parágrafos fornecem informações fixas e pode ser interpretado sem interação. De forma geral, os parágrafos desta página são signos estáticos"
+					>
+						<p>
 						A <strong>Engenharia Semiótica</strong>, proposta por
 						Clarisse Sieckenius de Souza, parte da ideia de que a
 						<strong>Interação Humano-Computador (IHC)</strong> é, na
@@ -119,6 +167,7 @@
 						designers, transmitindo a visão deles sobre quem são os
 						usuários, o que eles precisam fazer e como interagir.
 					</p>
+					</div>
 					<p>
 						Essa comunicação sobre a comunicação é o que chamamos de
 						metacomunicação, que pode ser descrita de acordo com o
@@ -205,7 +254,11 @@
 						em um dado momento.
 					</p>
 					<h4>Onde identificar</h4>
-					<ul>
+					<div class="sign-wrapper"
+						data-sign-type="estatico"
+						data-estatico-name="Lista de itens"
+						data-estatico-explanation="Listas contém itens que são signos estáticos, pois seus conteúdos e aparências não mudam com a interação do usuário. Cada item também é um exemplo de signo estático.">
+						<ul>
 						<li>Capturas de tela da interface.</li>
 						<li>Elementos visuais fixos e persistentes.</li>
 						<li>
@@ -230,13 +283,25 @@
 							consistentes.
 						</li>
 					</ul>
+					</div>
+					
 					<h4>Exemplos</h4>
+					<div class="sign-wrapper"
+						data-sign-type="metalinguistico"
+						data-metalinguistico-name="Mensagem de Informação"
+						data-metalinguistico-explanation="A mensagem de informação fornece instruções ou informações adicionais sobre o sistema."
+					>
+						<div class="info-message">
+							<span class="material-symbols-outlined">info</span>
+							<p>Os elementos abaixo são, de forma geral, exemplos de signos estáticos.</p>
+						</div>
+					</div>
 					<div class="wrapper">
 						<article class="example">
 							<p>Um texto:</p>
 							<div class="example-card">
-								<h4>Exemplo de Título</h4>
-								<p style="width: 100%">
+								<h4 style="margin-top: 0;">Exemplo de Título</h4>
+								<p style="width: 100%; margin-bottom: 0	;">
 									Este é um exemplo de parágrafo que
 									representa um signo estático.
 								</p>
@@ -290,9 +355,17 @@
 						<article class="example">
 							<p>Uma imagem:</p>
 							<div class="example-card">
-								<span class="material-symbols-outlined icon"
-									>search</span
-								>
+								<img
+									src="media/images/placeholder.jpg"
+									alt="Exemplo Imagem"
+									style="
+										width: 100%;
+										height: calc(200px - 2rem);
+										object-fit: cover;
+										border-radius: 0.5rem;
+										margin: 0;
+									"
+								/>
 							</div>
 						</article>
 					</div>
@@ -304,6 +377,7 @@
 						temporais em resposta às ações do usuário. Eles
 						demonstram como o sistema reage.
 					</p>
+					
 					<h4>Onde identificar</h4>
 					<ul>
 						<li>Interagindo diretamente com o sistema.</li>
@@ -315,6 +389,16 @@
 						<li>Gravações em vídeo de interações contínuas.</li>
 					</ul>
 					<h4>Exemplos</h4>
+					<div class="sign-wrapper"
+						data-sign-type="metalinguistico"
+						data-metalinguistico-name="Mensagem de Informação"
+						data-metalinguistico-explanation="A mensagem de informação fornece instruções ou informações adicionais sobre o sistema."
+					>
+						<div class="info-message">
+							<span class="material-symbols-outlined">info</span>
+							<p>Interaja com alguns elementos abaixo para ver exemplos de signos dinâmicos.</p>
+						</div>
+					</div>
 					<div class="wrapper">
 						<article class="example">
 							<p>O carregamento de uma informação:</p>
@@ -412,9 +496,17 @@
 							</div>
 						</article>
 
-						<button class="primary" id="back-to-example">
+						<div class="sign-wrapper"
+						id="back-to-example"
+							data-sign-type="dinamico"
+							data-dinamico-name="Retomar a Leitura"
+							data-dinamico-explanation="Clicar no botão o leva de volta para onde você parou.">
+							<button
+							class="primary"
+							>
 							Retomar a leitura
 						</button>
+						</div>
 					</div>
 
 					<h3 id="signos-metalinguisticos">
@@ -442,6 +534,16 @@
 						</li>
 					</ul>
 					<h4>Exemplos</h4>
+					<div class="sign-wrapper"
+						data-sign-type="metalinguistico"
+						data-metalinguistico-name="Mensagem de Informação"
+						data-metalinguistico-explanation="A mensagem de informação fornece instruções ou informações adicionais sobre o sistema."
+					>
+						<div class="info-message">
+							<span class="material-symbols-outlined">info</span>
+							<p>Interaja com alguns elementos abaixo para ver exemplos de signos metalinguísticos.</p>
+						</div>
+					</div>
 					<div class="wrapper">
 						<article class="example">
 							<p>Um tooltip:</p>
@@ -468,14 +570,27 @@
 									class="dialog-overlay"
 									id="dialog-button-dialog"
 								>
-									<div class="dialog-content">
+									<div class="sign-wrapper"
+										data-sign-type="metalinguistico"
+										data-metalinguistico-name="Diálogo Explicativo"
+										data-metalinguistico-explanation="O diálogo fornece informações adicionais sobre o sistema ou uma tarefa de usuário.">
+										<div
+										class="dialog-content">
 										<div class="dialog-header">
 											<h4 class="dialog-title">
 												Exemplo de Diálogo
 											</h4>
+
+											<div class="sign-wrapper"
+										data-sign-type="dinamico"
+										data-dinamico-name="Fechar diálogo"
+										data-dinamico-explanation="Clicar no botão fecha a caixa de diálogo.">
 											<button
 												class="close-dialog"
 												id="close-dialog-button"
+												data-sign-type="dinamico"
+												data-sign-name="Botão Fechar Diálogo"
+												data-sign-explanation="O botão dentro do diálogo permite ao usuário interagir para fechá-lo, sendo um signo dinâmico em sua funcionalidade, mas está dentro de um contexto metalinguístico."
 											>
 												<span
 													class="material-symbols-outlined"
@@ -483,6 +598,7 @@
 													close
 												</span>
 											</button>
+											</div>
 										</div>
 										<div class="dialog-body">
 											<p class="dialog-text">
@@ -492,6 +608,7 @@
 												opções.
 											</p>
 										</div>
+									</div>
 									</div>
 								</div>
 							</div>
@@ -545,7 +662,8 @@
 							<p>Uma solicitação direta ao usuário:</p>
 							<div class="example-card">
 								<h5 style="text-align: center">
-									O que está achando<br / > do MIS-Xplica?
+									O que está achando<br />
+									do MISplica?
 								</h5>
 								<div style="display: flex; gap: 0.5rem">
 									<button
@@ -588,14 +706,22 @@
 						comunicabilidade do sistema.
 					</p>
 					<p>
-						Você pode ver abaixo um exemplo de diagrama do processo
-						do Método de Inspeção Semiótica:
-					</p>
-					<img
-						src="media/images/placeholder.jpg"
+							Este é um exemplo de diagrama do processo do Método
+							de Inspeção Semiótica. Ele ilustra as etapas
+							principais do método, desde a preparação até o
+							relato dos resultados. Você pode baixar uma versão em PDF para impressão <strong><a href="media/pdf/diagrama_mis.pdf" target="_blank">aqui</a></strong>.
+						</p>
+					<div class="sign-wrapper"
+						data-sign-type="estatico"
+						data-estatico-name="Imagem"
+						data-estatico-explanation="Imagens estáticas não mudam com a interação do usuário. Elas são usadas para ilustrar conceitos ou processos de forma visual e permanente.">
+						<img
+						src="media/images/mis-metodologia.png"
 						alt="Diagrama do processo do Método de Inspeção Semiótica"
-						class="mis-diagram"
-					/>
+						class="mis-diagram"/>
+					</div>
+
+					<h3>Aplicando o método</h3>
 					<p>
 						O
 						<span title="Método de Inspeção Semiótica">MIS</span> é
@@ -604,7 +730,119 @@
 						<span title="Método de Inspeção Semiótica">MIS</span> é
 						conduzido em quatro etapas distintas:
 					</p>
-					<h3>Preparação</h3>
+					<div class="wrapper">
+						<article class="mis-card">
+  <span class="material-symbols-outlined mis-icon">search</span>
+  <h4>Preparação</h4>
+  <p>Delimitação do escopo da pesquisa</p>
+  <button class="primary scroll-to-mis-section" data-target="#mis-preparacao">Mais informações</button>
+						</article>
+
+						<article class="mis-card">
+							<span class="material-symbols-outlined mis-icon">edit</span>
+							<h4>Coleta de dados</h4>
+							<p>Inspeção dos signos da interface</p>
+							<button class="primary scroll-to-mis-section" data-target="#mis-coleta">Mais informações</button>
+						</article>
+
+						<article class="mis-card">
+							<span class="material-symbols-outlined mis-icon">compare_arrows</span>
+							<h4>Consolidação</h4>
+							<p>Contraste e comparação das metamensagens</p>
+							<button class="primary scroll-to-mis-section" data-target="#mis-consolidacao">Mais informações</button>
+						</article>
+
+						<article class="mis-card">
+							<span class="material-symbols-outlined mis-icon">assignment</span>
+							<h4>Relato dos resultados</h4>
+							<p>Avaliação de comunicabilidade do sistema</p>
+							<button class="primary scroll-to-mis-section" data-target="#mis-relato">Mais informações</button>
+						</article>
+					</div>
+
+					<h3 id="mis-preparacao">Preparação</h3>
+					<p>Esta fase inicial é crucial para definir o escopo e o foco da avaliação, garantindo que a inspeção seja direcionada e eficiente. É o momento de estabelecer a base para a compreensão da metacomunicação do designer.</p>
+
+					<h4>O que deve ser feito</h4>
+					<ul>
+						<li><b>Identificar os perfis de usuários:</b> É fundamental determinar quem são os usuários-alvo do sistema. Isso inclui compreender suas características demográficas, conhecimentos prévios, habilidades, contextos de uso e expectativas. A metamensagem do designer, que será o foco da avaliação, começa com a visão do designer sobre "quem você [usuário] é".</li>
+						<li><b>Identificar os objetivos apoiados pelo sistema:</b> Devem-se definir as metas e tarefas que o sistema foi projetado para ajudar os usuários a alcançar. Compreender esses objetivos é crucial para avaliar se a interface os comunica eficazmente. A metamensagem do designer continua com a sua compreensão de "o que eu entendi que você quer ou precisa fazer".</li>
+						<li><b>Definir as partes da interface que serão avaliadas:</b> Nem sempre é viável inspecionar um sistema inteiro. Portanto, é necessário selecionar as seções ou funcionalidades mais críticas, complexas ou representativas para a avaliação. A inspeção é tipicamente realizada em uma porção amostral do artefato, considerando-se as limitações de custo e tempo.</li>
+						<li><b>Escrever cenários de interação para guiar a avaliação:</b> Devem-se criar narrativas detalhadas que simulem a interação do usuário com o sistema para atingir os objetivos definidos. Esses cenários servirão como um roteiro para a inspeção, garantindo que o avaliador explore caminhos de interação relevantes e consistentes com as expectativas do designer.</li>	
+					</ul>
+
+					<h4>Dicas</h4>
+					<ul>
+						<li><b>Imersão no Domínio:</b> Antes de iniciar a inspeção, dedique tempo para compreender profundamente o domínio de aplicação do sistema e as necessidades reais dos usuários. Essa imersão permite que o avaliador construa uma representação mental do "usuário idealizado" que o designer tinha em mente. Como o método não envolve usuários reais, essa construção da perspectiva do usuário é fundamental para que a análise subsequente seja relevante e focada na eficácia da comunicação do designer para esse público específico.</li>
+						<li><b>Cenários Detalhados e Realistas:</b> Elabore cenários que sejam realistas e abrangentes, cobrindo tanto os fluxos de sucesso quanto possíveis desvios ou situações de erro. Quanto mais detalhado e representativo for o cenário, mais direcionada e eficaz será a inspeção, permitindo que o avaliador simule interações complexas e avalie a comunicabilidade em diversas condições.</li>
+						<li><b>Priorização Estratégica:</b> Ao definir as partes da interface a serem avaliadas, priorize aquelas que são críticas para o sucesso do usuário, que apresentam maior complexidade ou que são conhecidas por causar dificuldades. Essa seleção estratégica maximiza o valor da inspeção, concentrando os esforços nas áreas de maior impacto potencial na comunicabilidade.</li>
+					</ul>
+
+					<h3 id="mis-coleta">Coleta de Dados</h3>
+					<p>Nesta fase, o avaliador mergulha na interface para identificar e interpretar os signos que compõem a metamensagem do designer. Esta etapa envolve uma análise sistemática de diferentes categorias de signos, cada uma revelando uma faceta da comunicação do sistema.</p>
+
+					<h4>O que deve ser feito</h4>
+					<ul>
+						<li><b>Inspecionar a interface simulando a interação descrita pelo cenário de interação:</b> O avaliador deve navegar pelo sistema, executando as ações e seguindo os fluxos definidos nos cenários de interação previamente elaborados. Essa simulação permite observar como a interface se comporta em situações de uso que o designer previu, testando a coerência da metacomunicação.</li>
+						<li><b>Analisar signos metalinguísticos e reconstruir a metamensagem correspondente:</b> Os signos metalinguísticos são aqueles que explicitamente falam sobre o próprio sistema ou sua interação. Isso inclui documentação online e offline, manuais, mensagens de ajuda, tutoriais, mensagens de erro e qualquer texto que explique o uso do sistema. O objetivo é reproduzir a metacomunicação do designer (referida como 'X' em algumas fontes) conforme transmitida por esses elementos explícitos. Por exemplo, a forma como o sistema se refere a si mesmo ou a certas funcionalidades em sua ajuda online pode indicar a intenção do designer.</li>
+						<li><b>Analisar signos estáticos e reconstruir a metamensagem correspondente:</b> Os signos estáticos são elementos visuais da interface que não mudam com a interação imediata do usuário. Exemplos incluem ícones, botões, menus, rótulos, cores, layouts e a organização espacial dos elementos na tela. O avaliador inspeciona esses elementos para confirmar e elaborar sobre o conteúdo derivado da documentação, buscando identificar como a intenção de design é transmitida visualmente (metacomunicação 'Y'). Um exemplo seria a organização de botões e menus para edição de tabelas em um software, que comunica uma forma preferencial de interação.</li>
+					</ul>
+
+					<h4>Dicas</h4>
+					<ul>
+						<li><b>Registro Detalhado:</b> Mantenha um registro meticuloso de suas observações. Isso deve incluir capturas de tela, descrições dos signos, o contexto em que foram encontrados e suas primeiras interpretações. Esse registro será fundamental para a fase de consolidação, onde as diferentes camadas da metamensagem serão comparadas.</li>
+						<li><b>Abertura à Ambiguidade:</b> Aborde a inspeção com uma mente aberta para possíveis interpretações alternativas dos signos. O que um designer pretende comunicar pode não ser o que o usuário percebe. A capacidade de identificar essas ambiguidades é um ponto forte do método.</li>
+						<li><b>Perspectiva de Advogado do Usuário:</b> Lembre-se que o avaliador atua como um advogado do usuário. Constantemente, questione-se: "Um usuário plausível conseguiria interpretar este signo ou mensagem de forma diferente? Como? Por quê?". Essa postura crítica ajuda a desvendar falhas de comunicação que poderiam passar despercebidas.</li>
+					</ul>
+
+					<p>A análise sequencial de signos metalinguísticos e estáticos revela que a metacomunicação do designer é uma mensagem multi-camada. Os signos metalinguísticos fornecem a "narrativa" explícita do designer, os signos estáticos oferecem as "pistas visuais" imediatas. Essa abordagem permite um diagnóstico preciso da origem da falha comunicativa, identificando se o problema está na explicação ou na representação visual.</p>
+
+					<h3 id="mis-consolidacao">Consolidação e Interpretação dos Resultados</h3>
+					<p>Esta fase é o coração analítico do MIS, onde as metamensagens parciais são sintetizadas, e os problemas de comunicabilidade são identificados e julgados. É aqui que o avaliador constrói uma compreensão integrada da metacomunicação do designer.</p>
+
+					<h4>O que deve ser feito</h4>
+					<ul>
+						<li><b>Analisar signos dinâmicos e reconstruir a metamensagem correspondente:</b> Os signos dinâmicos são aqueles que expressam o comportamento do sistema em resposta à interação do usuário, a eventos externos ou ao tempo. Exemplos incluem animações, transições de tela, abertura de caixas de diálogo, habilitação/desabilitação de botões, mensagens de feedback e a mudança de estado dos elementos da interface. O avaliador interage com o artefato para derivar interpretações do que o sistema está comunicando através de seu comportamento (metacomunicação 'Z'). Por exemplo, o comportamento de um botão "cancelar" em um diálogo, que pode redefinir parâmetros para valores padrão, ajuda o usuário a interpretar sua função.</li>
+						<li><b>Contrastar e comparar as metamensagens reconstruídas (X, Y e Z):</b> Esta é a etapa mais crítica do método. O avaliador deve comparar as metamensagens derivadas da documentação (X), dos signos estáticos (Y) e dos signos dinâmicos (Z). Embora não se espere que essas mensagens sejam idênticas devido às diferentes capacidades expressivas dos sistemas de significação, elas não devem ser inconsistentes. O objetivo é identificar e rastrear inconsistências, ambiguidades ou contradições que possam levar a rupturas de comunicação para o usuário.</li>
+						<li><b>Julgar os problemas de comunicabilidade encontrados:</b> Com base na comparação e nas inconsistências identificadas, o avaliador formula um julgamento sobre os problemas de comunicabilidade. Isso envolve determinar onde o designer falhou em comunicar sua intenção de forma clara e como essa falha pode afetar a interação do usuário com o sistema. A ruptura de comunicação ocorre quando o usuário não consegue entender a intenção do projetista, o que pode acarretar em dificuldades ou até impossibilidade de interação.</li>
+					</ul>
+
+					<h4>Dicas</h4>
+					<ul>
+						<li><b>Busca Ativa por Inconsistências:</b> Não espere que as inconsistências apareçam; procure-as ativamente. Questione cada signo e sua interpretação em relação aos outros tipos de signos. A capacidade de explorar intencionalmente significados contraditórios ou ambíguos é fundamental.</li>
+						<li><b>Perguntas Guia:</b> Utilize perguntas para estruturar sua análise, como: "O usuário conseguiria interpretar este signo/mensagem de forma diferente? Como? Por quê?" e "Essa interpretação alternativa ainda seria consistente com a intenção do design?". Essas perguntas ajudam a aprofundar a análise e a identificar as raízes dos problemas de comunicação.</li>
+						<li><b>Evidência e Raciocínio:</b> Baseie seu julgamento em evidências claras dos signos observados e um raciocínio lógico sobre como as inconsistências podem levar a problemas de comunicação. A fundamentação das conclusões é essencial para a credibilidade do relatório.</li>
+					</ul>
+
+					<p>A fase de consolidação e interpretação é onde o MIS transcende a mera identificação de problemas de usabilidade, tornando-se um método de diagnóstico semiótico profundo. Ao contrastar as metamensagens de diferentes tipos de signos, o avaliador não apenas descobre que há um problema, mas diagnostica a raiz semiológica da falha. Ele pode identificar se a intenção do designer está clara na documentação, mas se perde na representação visual (signos estáticos), ou se ambos são claros, mas o comportamento do sistema (signos dinâmicos) os contradiz. Essa síntese diagnóstica permite que as recomendações de melhoria sejam muito mais precisas e focadas na reparação da comunicação do design.</p>
+
+					<h3 id="mis-relato">Relato dos Resultados</h3>
+					<p>A fase final do MIS consiste em documentar os achados da avaliação de forma clara e acionável, comunicando os problemas de comunicabilidade identificados. O relatório é o produto final da inspeção, traduzindo as análises complexas em informações úteis para o processo de design.</p>
+
+					<h4>O que deve ser feito</h4>
+					<ul>
+						<li><b>Reportar a avaliação da comunicabilidade da solução de IHC da perspectiva do remetente da metamensagem:</b> O relatório final deve apresentar os resultados da avaliação focando na qualidade da comunicação do designer para o usuário, e não apenas em uma lista de falhas. O objetivo é apreciar a qualidade geral da metacomunicação designer-usuário.</li>
+						<li><b>Conteúdo do Relatório:</b> Tipicamente, o relatório deve incluir:
+							<ul>
+								<li>Uma breve descrição do método de inspeção semiótica utilizado.</li>
+								<li>Os critérios para a seleção das porções da interface inspecionadas.</li>
+								<li>Para cada um dos três tipos de signos (metalinguísticos, estáticos, dinâmicos): identificação dos signos relevantes, seus sistemas e classes, e uma versão revisada da metamensagem do designer conforme interpretada a partir desses signos.</li>
+								<li>Um julgamento fundamentado dos problemas de comunicabilidade reais ou potenciais que podem impedir os usuários de entender a mensagem do designer e interagir produtivamente.</li>
+							</ul>
+						</li>
+					</ul>
+
+					<h4>Dicas</h4>
+					<ul>
+						<li><b>Clareza e Objetividade:</b> Apresente os resultados de forma clara, concisa e objetiva. Evite jargões excessivos e foque na comunicação eficaz dos achados, tornando o relatório acessível a designers e outras partes interessadas.</li>
+						<li><b>Exemplos Concretos:</b> Ilustre os problemas de comunicabilidade com exemplos concretos de signos e suas interpretações. Capturas de tela, descrições detalhadas de interações e citações de mensagens do sistema podem ser muito úteis para fundamentar as observações.</li>
+						<li><b>Recomendações Construtivas:</b> Além de identificar os problemas, sugira recomendações construtivas para melhorar a comunicabilidade do design. Foque em como o designer pode refinar sua mensagem e a lógica subjacente do sistema para evitar futuras rupturas de comunicação.</li>
+						<li><b>Foco na Metamensagem:</b> Mantenha o foco na metacomunicação do designer. O relatório deve responder à pergunta central: "O que o designer está comunicando e quão bem essa mensagem está sendo transmitida através da interface?" Essa abordagem garante que o feedback seja diretamente aplicável ao aprimoramento do design sob a ótica da Engenharia Semiótica.</li>
+					</ul>
+
+					<p>O relatório final do MIS não é apenas um documento de avaliação, mas um mecanismo de feedback semiótico direto para o processo de design. Ao enquadrar os achados na perspectiva do designer e sua metamensagem, o relatório fornece informações acionáveis que vão além de "o botão está no lugar errado". Ele informa ao designer como sua intenção comunicativa foi percebida (ou mal percebida) através dos diferentes signos da interface. Isso permite que os designers ajustem não apenas a superfície da interface, mas a própria lógica comunicativa subjacente de seu design.</p>
+
+					<!-- <h4 id="mis-preparacao">Preparação</h4>
 					<p>
 						O avaliador delimita o escopo da pesquisa, identificando
 						os perfis de usuários, objetivos do sistema e as partes
@@ -617,7 +855,7 @@
 						class="mis-diagram"
 					/>
 
-					<h3>Coleta de dados</h3>
+					<h4 id="mis-coleta">Coleta de dados</h4>
 					<p>
 						O avaliador inspeciona a interface, preenchendo o modelo
 						de metacomunicação para cada tipo de signo.
@@ -628,7 +866,7 @@
 						class="mis-diagram"
 					/>
 
-					<h3>Consolidação e interpretação dos resultados</h3>
+					<h4 id="mis-consolidacao">Consolidação e interpretação dos resultados</h4>
 					<p>
 						O avaliador contrasta e compara as metamensagens
 						reconstruídas, julgando os problemas de metacomunicação
@@ -640,7 +878,7 @@
 						class="mis-diagram"
 					/>
 
-					<h3>Relato dos resultados</h3>
+					<h4 id="mis-relato">Relato dos resultados</h4>
 					<p>
 						O avaliador relata a avaliação de comunicabilidade do
 						sistema sob o ponto de vista do emissor da metamensagem.
@@ -649,7 +887,7 @@
 						src="media/images/placeholder.jpg"
 						alt="Diagrama do processo do Método de Inspeção Semiótica"
 						class="mis-diagram"
-					/>
+					/> -->
 				</section>
 
 				<section id="aprofundar">
@@ -810,7 +1048,9 @@
 						</li>
 					</ul>
 
-					<h3>Revisões de aplicabilidade</h3>
+					<h3 id="revisoes-de-aplicabilidade">
+						Revisões de aplicabilidade
+					</h3>
 					<ul>
 						<li>
 							REIS, S. S.; PRATES, R. O.
@@ -864,17 +1104,6 @@
 								></strong
 							>. Universidade Federal Fluminense (UFF).
 						</li>
-						<!-- <li>
-							<strong
-								><a
-									href="https://seda.quixada.ufc.br/"
-									target="_blank"
-									>SEDA – Engenharia Semiótica e Arte
-									Digital</a
-								></strong
-							>
-							. Universidade Federal do Ceará (UFC Quixadá)
-						</li> -->
 					</ul>
 				</section>
 
@@ -908,12 +1137,14 @@
 
 				<div class="theme-toggle">
 					<label for="theme-switch">Tema</label>
-					<fieldset
-						id="theme-switch"
-						data-sign-type="dinamico"
-						data-sign-name="Fieldset"
-						data-sign-explanation="Selecionar um tema entre padrão, claro e escuro altera o tema da página."
+					<div
+					class="sign-wrapper"
+					data-sign-type="dinamico"
+					data-dinamico-name="Seleção de tema"
+					data-dinamico-explanation="Escolher um tema altera a aparência da interface."
 					>
+					<fieldset
+						id="theme-switch">
 						<radio-group>
 							<div class="theme-option">
 								<input
@@ -923,7 +1154,7 @@
 									id="default-theme"
 									checked
 								/>
-								<label for="default-theme">Padrão</label>
+								<label for="default-theme">Sistema</label>
 							</div>
 							<div class="theme-option">
 								<input
@@ -945,35 +1176,76 @@
 							</div>
 						</radio-group>
 					</fieldset>
+					</div>
+
+						<!-- Controle de tamanho de fonte -->
+						<div class="font-size-control" id="font-size-control">
+							<label for="font-size-slider">Tamanho do texto</label>
+							<div class="sign-wrapper"
+								data-sign-type="dinamico"
+								data-dinamico-name="Mudança de tamanho de texto"
+								data-dinamico-explanation="Interagir com o slider ou com os botões aumenta ou diminui o tamanho do texto."
+								style="flex-direction: column;">
+
+								<div class="font-size-row">
+									<button class="icon secondary small" id="font-decrease" title="Diminuir texto">
+										<span class="material-symbols-outlined">remove</span>
+									</button>
+									<input
+										id="font-size-slider"
+										type="range"
+										min="75"
+										max="150"
+										value="100"
+										step="1"
+									/>
+									<button class="icon secondary small" id="font-increase" title="Aumentar texto">
+										<span class="material-symbols-outlined">add</span>
+									</button>
+									<span class="font-size-value" id="font-size-value">100%</span>
+								</div>
+								<div class="font-reset-row">
+									<button class="primary font-reset" id="font-reset" style="display:none; margin-top:0.5rem;">Redefinir</button>
+								</div>
+							</div>
+						</div>
 				</div>
-			</div>
+				</div>
 		</main>
 
 		<div class="dialog-overlay" id="about-dialog-overlay">
+			<div class="sign-wrapper"
+										data-sign-type="metalinguistico"
+										data-metalinguistico-name="Sobre o MISplica"
+										data-metalinguistico-explanation="Este diálogo fornece informações sobre o MISplica e como utilizá-lo, sendo uma comunicação direta do designer sobre o próprio sistema."
+										style="max-height: 70vh;">
 			<div
 				class="dialog-content large"
 				id="about-dialog-content"
-				data-sign-type="metalinguistico"
-				data-sign-name="Diálogo"
-				data-sign-explanation="O diálogo 'Sobre' fornece informações sobre o MIS-Xplica e como utilizá-lo."
 			>
 				<div class="dialog-header">
 					<h4 class="dialog-title" id="about-dialog-title">
-						Sobre o MIS-Xplica
+						Sobre o MISplica
 					</h4>
+
+					<div class="sign-wrapper"
+										data-sign-type="dinamico"
+										data-dinamico-name="Fechar diálogo"
+										data-dinamico-explanation="Clicar no botão fecha a caixa de diálogo.">
 					<button
 						class="close-dialog"
 						id="close-about-button"
 						data-sign-type="dinamico"
 						data-sign-name="Fechar Diálogo"
-						data-sign-explanation="O botão 'Fechar Diálogo' fecha o diálogo atual."
+						data-sign-explanation="O botão 'Fechar Diálogo' é dinâmico pois sua ativação resulta em uma mudança visível (fechamento do diálogo)."
 					>
 						<span class="material-symbols-outlined"> close </span>
 					</button>
+					</div>
 				</div>
 				<div class="dialog-body">
 					<p class="dialog-text" id="about-dialog-message">
-						O MIS-Xplica é uma ferramenta interativa desenvolvida
+						O MISplica é uma ferramenta interativa desenvolvida
 						para que você possa conhecer e aprender sobre o Método
 						de Inspeção Semiótica (MIS) de forma prática e didática.
 						Ele permite que você explore os conceitos fundamentais
@@ -1009,20 +1281,36 @@
 					</p>
 				</div>
 			</div>
+			</div>
 		</div>
 
 		<div class="dialog-overlay" id="feedback-dialog-overlay">
-			<div class="dialog-content">
+			<div class="sign-wrapper"
+										data-sign-type="metalinguistico"
+										data-metalinguistico-name="Diálogo de feedback"
+										data-metalinguistico-explanation="Este diálogo permite ao usuário enviar feedback sobre o sistema, sendo uma comunicação direta do designer para o usuário, solicitando sua opinião e interação.">
+			<div
+				class="dialog-content"
+			>
 				<div class="dialog-header">
 					<h4 class="dialog-title" id="feedback-dialog-title">
 						Título
 					</h4>
+					
+					<div class="sign-wrapper"
+										data-sign-type="dinamico"
+										data-dinamico-name="Fechar diálogo"
+										data-dinamico-explanation="Clicar no botão fecha a caixa de diálogo.">
 					<button
 						class="close-dialog"
 						id="close-feedback-dialog-button"
+						data-sign-type="dinamico"
+						data-sign-name="Botão Fechar Diálogo de Feedback"
+						data-sign-explanation="O botão 'close' dentro do diálogo permite ao usuário interagir para fechar o diálogo, sendo um signo dinâmico em sua funcionalidade, mas está dentro de um contexto metalinguístico."
 					>
 						<span class="material-symbols-outlined"> close </span>
 					</button>
+					</div>
 				</div>
 				<div class="dialog-body">
 					<p class="dialog-text" id="feedback-dialog-message">
@@ -1030,7 +1318,7 @@
 					</p>
 					<p class="dialog-text">
 						Gostaria de deixar uma opinião? Ela é extremamente
-						valiosa para a melhoria do MIS-Xplica!
+						valiosa para a melhoria do MISplica!
 					</p>
 					<form
 						id="feedback-form"
@@ -1039,7 +1327,13 @@
 						method="POST"
 					>
 						<label for="feedback-rating">Sua avaliação:</label>
-						<div class="rating-stars" id="feedback-rating-stars">
+						<div
+							class="rating-stars"
+							id="feedback-rating-stars"
+							data-sign-type="dinamico"
+							data-sign-name="Estrelas de Avaliação"
+							data-sign-explanation="As estrelas de avaliação são dinâmicas, pois o usuário interage com elas (clicando para selecionar a nota), e elas podem mudar de aparência para refletir a seleção."
+						>
 							<span
 								class="material-symbols-outlined star"
 								data-rating="1"
@@ -1087,6 +1381,7 @@
 							Enviar Feedback
 						</button>
 					</form>
+				</div>
 				</div>
 			</div>
 		</div>

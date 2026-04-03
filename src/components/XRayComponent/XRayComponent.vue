@@ -1,0 +1,113 @@
+<script setup lang="ts">
+import { activeXRay } from '@/composables/useXRay';
+import type { XRayType } from '@/types/types';
+import SignComponent from '../SignComponent/SignComponent.vue';
+
+const toggleXRay = (type: XRayType) => {
+  if (activeXRay.value === type) {
+    activeXRay.value = null;
+  } else {
+    activeXRay.value = type;
+  }
+}
+</script>
+
+<template>
+  <SignComponent id="xray" class="xray">
+    <h2 class="xray-title">Raio-X</h2>
+
+    <button
+      class="xray-btn static"
+      :class="{active: activeXRay === 'static'}"
+      @click="toggleXRay('static')"
+      title="Raio-X estático"
+    >
+    <span class="material-symbols-outlined">widgets</span>
+    </button>
+    <button
+      class="xray-btn dynamic"
+      :class="{active: activeXRay === 'dynamic'}"
+      @click="toggleXRay('dynamic')"
+      title="Raio-X dinâmico"
+    >
+    <span class="material-symbols-outlined">magic_button</span>
+    </button>
+    <button
+      class="xray-btn metalinguistic"
+      :class="{active: activeXRay === 'metalinguistic'}"
+      @click="toggleXRay('metalinguistic')"
+      title="Raio-X metalinguístico"
+    >
+    <span class="material-symbols-outlined">info</span>
+    </button>
+  </SignComponent>
+</template>
+
+<style scoped>
+.xray {
+  --base-radius: 1rem;
+  display: flex !important;
+  align-items: center;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  gap: 0.5rem;
+  background-color: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--base-radius);
+  line-height: 1;
+
+  h2 {
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.xray-btn {
+  --background: transparent;
+  --color: var(--clr-btn-text);
+
+  background-color: var(--background);
+  color: var(--color);
+  border: 1px solid var(--clr-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    --color: var(--clr-text-btn);
+  }
+
+  &.static:hover, &.static.active {
+    --background: var(--clr-static);
+  }
+  &.dynamic:hover, &.dynamic.active {
+    --background: var(--clr-dynamic);
+  }
+  &.metalinguistic:hover, &.metalinguistic.active {
+    --background: var(--clr-metalinguistic);
+  }
+
+  &.active {
+    --color: var(--clr-bg);
+  }
+
+  &:hover {
+    background-color: light-dark(
+      oklch(from var(--background) calc(l - 0.15) c h),
+      oklch(from var(--background) calc(l + 0.1) c h)
+    );
+  }
+
+  &.active > span,
+  &:hover > span {
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+}
+</style>
